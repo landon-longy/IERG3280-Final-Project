@@ -1,0 +1,417 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{times}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{cite}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{indentfirst}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,      % Table / Figure / Section
+    citecolor=blue,      % 文献引用
+    urlcolor=blue        % URL
+}
+
+\singlespacing
+\setlength{\parskip}{0.35em}
+\setlength{\parindent}{1.2em}
+
+% Overleaf note:
+% This file prefers PDF figures and then PNG figures with the same basename.
+% If PDF export is inconvenient, PNG is a practical fallback and usually stays
+% closer to the on-screen SVG appearance than SVG inclusion in LaTeX.
+
+\newcommand{\figplaceholder}[2][0.92\linewidth]{%
+  \fbox{%
+    \parbox[c][0.20\textheight][c]{#1}{%
+      \centering
+      Upload or convert the figure file:\\
+      \texttt{#2}
+    }%
+  }%
+}
+
+\newcommand{\insertfigure}[4][0.92\linewidth]{%
+  \begin{figure}[t]
+    \centering
+    \IfFileExists{#2.pdf}{%
+      \includegraphics[width=#1]{#2.pdf}%
+    }{%
+      \IfFileExists{#2.png}{%
+        \includegraphics[width=#1]{#2.png}%
+      }{%
+        \figplaceholder[#1]{#2.pdf\space or\space #2.png}%
+      }%
+    }
+    \caption{#3}
+    \label{#4}
+  \end{figure}
+}
+
+\newcommand{\coursename}{IERG 3280}
+\newcommand{\coursetitle}{Networks: Technology, Economics, and Social Interactions}
+\newcommand{\university}{The Chinese University of Hong Kong}
+\newcommand{\papertitle}{Robustness and Efficiency Analysis of GSP and VCG Auctions in Heterogeneous Networked Environments}
+\newcommand{\authorname}{YANG Long}            
+\newcommand{\studentid}{1155236882}         
+\newcommand{\reportdate}{April 22, 2026}    
+
+\begin{document}
+
+% ================== TITLE PAGE ==================
+\begin{titlepage}
+    \centering
+    % ---- Photo placeholder (centered) ----
+    \vspace{1.8cm}
+    \begin{center}
+        \includegraphics[width=0.4\textwidth]{CUHK_Logo.png}
+        
+    \end{center}
+    \vspace{1.0cm}
+
+    % ---- School & course (elegant font & layout) ----
+    {\large \textsc{\university}\par}
+    \vspace{0.6cm}
+    {\Large \text{\coursename}\par} % 课程代码：中等大号（比标题小）
+    \vspace{0.2cm}
+    {\large \textsc{\coursetitle}\par}
+    \vspace{1.3cm}
+    % ---- Title ----
+    {\LARGE \bfseries \papertitle \par} % 标题：比课程代码更大
+    
+    \vspace{1.3cm}
+    
+    % ---- Author & SID on one line, left/right, with italic labels ----
+    {\large \textit{Name}: \authorname \par}
+    {\vspace{0.2cm}}
+    {\large \textit{Student ID}: \studentid \par}
+    
+    \vfill
+    
+    {\reportdate \par}
+\end{titlepage}
+
+\begin{abstract}
+This project studies the robustness of two multi-slot auction mechanisms, the Generalized Second Price (GSP) auction and the Vickrey--Clarke--Groves (VCG) mechanism, under three practically relevant deviations from the ideal model: heterogeneous bidder behavior, collusion, and network latency. The simulator adopts a one-factor-at-a-time design with two reference baselines: an all-truthful market and a balanced heterogeneous market with a 1:1:1:1 type ratio. All reported experiments use 20 bidders and 5 slots. Across all experiments, GSP consistently generates higher seller revenue, whereas VCG yields lower payoff dispersion and lower utility inequality. In the collusion experiment, since VCG already tends to earn less revenue in the standard model, the key quantity is how the percentage changes with collusion intensity. The loss percentage decreases slightly from 51.88\% at 0\% collusion to 51.49\% at 40\% collusion, suggesting that VCG is relatively more resilient in the low-to-moderate collusion region, but then rises to 68.05\% at 90\% collusion, suggesting that GSP is relatively more resilient under high collusion. Although the loss changes, GSP maintains the higher absolute revenue throughout, same as the conclusion from the lecture.
+\end{abstract}
+
+\section{Introduction}
+
+Auction mechanisms are central to modern networked markets, especially sponsored search and online advertising, where multiple advertisers compete for a limited number of ranked positions. Two representative mechanisms in this setting are the Generalized Second Price (GSP) auction and the Vickrey--Clarke--Groves (VCG) mechanism. The VCG family is grounded in the classical mechanism-design work of Vickrey, Clarke, and Groves \cite{vickrey1961,clarke1971,groves1973}. GSP, by contrast, became especially influential in sponsored search and position auctions because of its practical simplicity and strong revenue performance \cite{edelman2007,varian2007}. 
+
+Recent literature confirms that auction-based digital advertising remains both economically important and technically complex. Waisman, Nair, and Carrion analyze real-time bidding (RTB) auctions directly and show that auction structure is central to how advertising effectiveness is inferred in practice \cite{waisman2025}. Bergemann, Bonatti, and Wu further study modern digital advertising auctions in settings where platforms combine data and auction-like allocation rules \cite{bergemann2025}. This broader background motivates a robustness-oriented comparison between GSP and VCG beyond the idealized textbook model.
+
+The three non-ideal factors examined in this report are also grounded in recent evidence. First, advertiser heterogeneity is empirically relevant: Ghoshal, Mookerjee, and Sun model heterogeneous advertisers with different contracts in a real RTB setting \cite{ghoshal2023}, while Xu, Zhu, and Dutta show that asymmetric advertisers can materially alter position-auction outcomes \cite{xu2023}. Second, collusion-like coordination risks are realistic in digital advertising markets. Decarolis et al.\ study algorithmic bidding in online advertising and show that bidding through a common intermediary can reduce auctioneer revenue relative to individual bidding \cite{decarolis2024}. Third, latency is not only a simulation convenience. Aqeel et al.\ analyze hundreds of thousands of real header-bidding auctions and directly measure latency overheads together with their revenue consequences \cite{aqeel2020}. Recent empirical work on sponsored search auctions also documents substantial variation in bidder behavior across products and quality environments \cite{kim2025}. 
+
+Motivated by these observations, this project implements a multi-slot auction simulator and evaluates GSP and VCG under a one-factor-at-a-time design. The experiments study bidder-type mixtures, collusion ratios, and latency-induced late arrivals while recording seller revenue, social welfare, allocation efficiency, and bidder payoff distribution. The main result is a persistent tradeoff: GSP is substantially stronger in seller revenue, while VCG yields smoother and more equal bidder payoffs. Under collusion, the interpretation is more nuanced. According to the change in the VCG-loss percentage relative to GSP, VCG appears slightly more resilient in the low-to-moderate collusion region, but GSP becomes relatively more resilient once collusion becomes strong. In absolute revenue, however, GSP remains larger throughout.
+
+\section{Auction Model and Experimental Design}
+
+\subsection{Auction Model}
+
+The simulator models a slot-based auction with five ranked positions and a click-through-rate (CTR) profile of
+\[
+[1.00,\; 0.82,\; 0.64,\; 0.49,\; 0.37].
+\]
+Each bidder is characterized by a true valuation, bidder type, budget, bid shading factor, and bid-arrival latency.
+
+For GSP, bidders are ranked by effective bid and each winner pays the next bidder's bid scaled by the slot CTR, following the standard sponsored-search logic in \cite{edelman2007,varian2007}. For VCG, payments are computed using the standard externality formula, following the Vickrey--Clarke--Groves principle \cite{vickrey1961,clarke1971,groves1973}. A submission deadline is imposed so that late bids are excluded in the latency experiment.
+
+\subsection{Bidder Types}
+
+The simulator includes four bidder types:
+\begin{itemize}
+  \item \texttt{truthful}: bids close to true value;
+  \item \texttt{shaded}: systematically underbids;
+  \item \texttt{budget}: underbids and is constrained by affordability;
+  \item \texttt{aggressive}: slightly overbids relative to true value.
+\end{itemize}
+
+This type system is consistent with recent work arguing that modern digital advertising markets contain bidders with different contracts, quality scores, and strategic incentives \cite{ghoshal2023,xu2023,kim2025}. The heterogeneous-bidder experiment therefore evaluates not only aggregate outcomes, but also bidder payoff by type.
+
+\subsection{Two Baselines}
+
+To make the results easier to interpret, two reference markets are used (Table~\ref{tab:baseline_comp}).
+
+\begin{table}[t]
+  \centering
+  \caption{Market composition of baseline scenarios}
+  \label{tab:baseline_comp}
+  \small
+  \begin{tabular}{lcccc}
+    \toprule
+    Market & Truthful & Shaded & Budget & Aggressive \\
+    \midrule
+    All-truthful & 100\% & 0\% & 0\% & 0\% \\
+    Balanced 1:1:1:1 & 25\% & 25\% & 25\% & 25\% \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+The all-truthful baseline serves as the main theoretical reference. The balanced 1:1:1:1 market serves as the fixed reference for the collusion and latency experiments.
+
+\subsection{Experiments Settings}
+
+\textbf{Heterogeneous bidder mixtures.} Starting from the balanced heterogeneous baseline, four heavy type-mix profiles are studied: truthful-heavy, shaded-heavy, budget-heavy, and aggressive-heavy. The all-truthful and balanced markets are shown separately as the two heterogeneous references. Formally, let $T_i$ denote the type of bidder $i$. Then
+\[
+T_i \sim \mathrm{Categorical}(\pi),
+\]
+where $\pi$ is the type-mix vector over (truthful, shaded, budget, aggressive). In the balanced market,
+\[
+\pi^{\text{bal}} = (0.25,\, 0.25,\, 0.25,\, 0.25).
+\]
+To keep the heavy profiles symmetric, the emphasized type always receives weight 0.55 and the other three types each receive weight 0.15. For a heavy profile indexed by type $h$,
+\[
+\pi_t^{(h)} =
+\begin{cases}
+0.55, & t = h,\\[4pt]
+0.15, & t \neq h.
+\end{cases}
+\]
+Thus, truthful-heavy is $(0.55, 0.15, 0.15, 0.15)$, while shaded-heavy, budget-heavy, and aggressive-heavy are defined analogously. Only the type composition changes in this experiment.
+
+\textbf{Collusion.} The type mix is fixed at the balanced 1:1:1:1 market. The balanced market itself is treated as the 0\% collusion reference, and a bidding ring is then introduced with collusion ratios 10\%, 20\%, \dots, 90\%. Let $\rho$ denote the collusion ratio, $n$ the number of bidders, and $\mathcal{C}$ the colluding set. In the simulator,
+\[
+|\mathcal{C}| = \max\{2,\lfloor \rho n \rfloor\}.
+\]
+Within the ring, the proxy bidder is the colluding bidder with the highest valuation:
+\[
+p = \arg\max_{i \in \mathcal{C}} v_i.
+\]
+The collusive bids are then defined as
+\[
+b_p = \max\{r,\; 0.72\, v_p\},
+\]
+and
+\[
+b_j = r, \qquad \forall j \in \mathcal{C}\setminus\{p\},
+\]
+where $r$ is the reserve price. All non-colluding bidders keep their normal type-dependent bidding rules. Although stylized, this setup is motivated by evidence that algorithmic bidding and common intermediaries can support coordination-like behavior in online advertising \cite{decarolis2024}.
+
+The coefficient $0.72$ is a modeling choice rather than a theoretical constant. It is selected as a moderate collusive shading factor: low enough to suppress price competition and reduce seller revenue, but still high enough for the proxy bidder to remain competitive in the auction. The $\max\{r,\cdot\}$ term ensures that the collusive proxy bid does not fall below the reserve price.
+
+\textbf{Network latency.} The type mix is again fixed at the balanced 1:1:1:1 market. Bid delays are generated from a Gaussian distribution and then adjusted by bidder type. In the implementation, the baseline latency of bidder $i$ is
+\[
+L_i^{(0)} = \max\{0,\; \mathcal{N}(\mu,\, 0.45\mu)\},
+\]
+where $\mu$ is the configured latency scale in milliseconds. In the reported experiments, $\mu = 58$.
+
+The final latency is
+\[
+L_i = L_i^{(0)} + \Delta_i,
+\]
+where
+\[
+\Delta_i =
+\begin{cases}
+U(25,70), & \text{if bidder } i \text{ is truthful},\\[4pt]
+U(10,45), & \text{if bidder } i \text{ is budget-constrained},\\[4pt]
+0, & \text{otherwise}.
+\end{cases}
+\]
+
+Let $D$ denote the submission deadline. In the simulator,
+\[
+D = 120 \text{ ms}.
+\]
+Bidder $i$ is eligible only if
+\[
+L_i \le D.
+\]
+Equivalently, the set of eligible bidders is
+\[
+\mathcal{E} = \{i : L_i \le D\}.
+\]
+Only bidders in $\mathcal{E}$ enter the ranking and payment computation. 
+
+The setting models two realistic effects at the same time. First, bid arrival time is noisy, so different bidders experience different network delays. Second, some bidder types may face more delay than others because of slower decision or delivery pipelines. The deadline then turns latency into an economically meaningful factor: a bid that arrives too late is simply excluded from the auction. This design captures the practical importance of latency in real advertising exchanges \cite{aqeel2020}.
+
+\section{Experimental Results}
+
+All reported results are averages over 300 simulation rounds with 20 bidders and 5 slots.
+
+\subsection{Baseline Comparison}
+
+Table~\ref{tab:baseline} reports the two baseline markets. The all-truthful baseline aligns more closely with standard mechanism-theoretic assumptions, while the balanced heterogeneous baseline is the empirical reference used in later experiments.
+
+\begin{table}[t]
+  \centering
+  \caption{Two baseline markets}
+  \label{tab:baseline}
+  \small
+  \begin{tabular}{llcccc}
+    \toprule
+    Market & Mech. & Revenue & Welfare & Eff. & Payoff SD \\
+    \midrule
+    All-truthful & GSP & 7.2639 & 8.8983 & 0.9354 & 0.2964 \\
+    All-truthful & VCG & 3.5263 & 8.8643 & 0.9387 & 0.2294 \\
+    Balanced 1:1:1:1 & GSP & 6.8093 & 8.7601 & 0.9209 & 0.3120 \\
+    Balanced 1:1:1:1 & VCG & 3.2764 & 8.6977 & 0.9209 & 0.2634 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+In both baselines, GSP generates much higher seller revenue than VCG. However, VCG produces lower payoff dispersion and lower utility inequality. In the all-truthful baseline, every bidder submits a truthful bid, so the truthful-gap metric is zero by construction. This makes the setting a clean theoretical benchmark for comparing GSP and VCG.
+
+\subsection{Heterogeneous Bidder Mixtures}
+
+The heterogeneous-mixture experiment shows that GSP consistently dominates VCG in seller revenue. Across the two baselines and four heavy profiles, GSP revenue is always higher than VCG (Figure~\ref{fig:hetero-revenue}). Compared with a balanced baseline, truthful-heavy and aggressive-heavy settings tend to increase seller revenue, because these bidders tend to have higher bids than the other two types. Regarding social welfare, Figure~\ref{fig:hetero-welfare} reveals that it is comparatively stable under diverse mixtures.
+
+\insertfigure{figures/heterogeneous_revenue}{Seller revenue under heterogeneous type mixtures, compared against the all-truthful and balanced heterogeneous baselines.}{fig:hetero-revenue}
+
+\insertfigure{figures/heterogeneous_welfare}{Social welfare under heterogeneous type mixtures, compared against the all-truthful and balanced heterogeneous baselines.}{fig:hetero-welfare}
+
+\begin{table}[t]
+  \centering
+  \caption{Mean bidder payoff by type under heterogeneous settings}
+  \label{tab:hetero-payoff}
+  \small
+  \begin{tabular}{llcccc}
+    \toprule
+    Setting & Mech. & Truthful & Shaded & Budget & Aggressive \\
+    \midrule
+    All-truthful & GSP & 0.0817 & - & - & - \\
+    All-truthful & VCG & 0.2669 & - & - & - \\
+    Balanced & GSP & 0.0995 & 0.0932 & 0.1034 & 0.0939 \\
+    Balanced & VCG & 0.3197 & 0.1529 & 0.2176 & 0.3882 \\
+    Truthful-heavy & GSP & 0.0958 & 0.0805 & 0.0887 & 0.0841 \\
+    Truthful-heavy & VCG & 0.3021 & 0.1431 & 0.2022 & 0.3499 \\
+    Shaded-heavy & GSP & 0.1234 & 0.1173 & 0.1295 & 0.1204 \\
+    Shaded-heavy & VCG & 0.3809 & 0.2157 & 0.2811 & 0.4222 \\
+    Budget-heavy & GSP & 0.1108 & 0.1106 & 0.1209 & 0.1078 \\
+    Budget-heavy & VCG & 0.3581 & 0.1940 & 0.2492 & 0.4019 \\
+    Aggressive-heavy & GSP & 0.0869 & 0.0762 & 0.0732 & 0.0753 \\
+    Aggressive-heavy & VCG & 0.2683 & 0.1122 & 0.1440 & 0.3295 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+Table~\ref{tab:hetero-payoff} reports the mean payoff of each bidder type in each heterogeneous setting. Rows correspond to the balanced baseline and the four heavy profiles, while columns report the bidder-type payoff under each mechanism.
+
+The payoff-by-type results suggest that heterogeneity affects distribution more than total allocative value. From the data in Table~\ref{tab:hetero-payoff}, the distribution under GSP is relatively stable than that under VCG. One possible explanation is that GSP tends to prioritize seller revenue, resulting in lower and less variable bidder payoffs. Also, bidder types with higher proportion generally achieve higher payoffs compare with the balanced case. An exception is the aggressive bidder, which may face a higher risk of low or even negative payoffs, as the slot price can exceed their underlying valuation.
+
+\subsection{Collusion and Revenue Loss of VCG Relative to GSP}
+
+The collusion experiment directly answers the feedback question about the revenue loss of VCG relative to GSP. Table~\ref{tab:collusion} reports the full sweep.
+
+In this report, the revenue loss of VCG relative to GSP is defined as
+\[
+\text{Revenue Loss}_{\text{VCG}\mid\text{GSP}} = R_{\text{GSP}} - R_{\text{VCG}},
+\]
+and the corresponding percentage loss is
+\[
+\text{Revenue Loss \%}_{\text{VCG}\mid\text{GSP}} =
+\frac{R_{\text{GSP}} - R_{\text{VCG}}}{R_{\text{GSP}}}\times 100\%.
+\]
+That is, GSP is treated as the reference mechanism, and we measure how much seller revenue is lost when VCG is used instead.
+
+\begin{table}[t]
+  \centering
+  \caption{Collusion sweep under the balanced 1:1:1:1 baseline}
+  \label{tab:collusion}
+  \small
+  \begin{tabular}{cccccc}
+    \toprule
+    Collusion & GSP Rev. & VCG Rev. & GSP Welfare & VCG Welfare & VCG Loss (\%) \\
+    \midrule
+    0\% & 6.8093 & 3.2764 & 8.7601 & 8.6977 & 51.88 \\
+    10\% & 6.6788 & 3.2202 & 8.7652 & 8.6909 & 51.78 \\
+    20\% & 6.5371 & 3.1630 & 8.7506 & 8.6972 & 51.61 \\
+    30\% & 6.3506 & 3.0794 & 8.7014 & 8.6698 & 51.51 \\
+    40\% & 6.1242 & 2.9708 & 8.5950 & 8.6252 & 51.49 \\
+    50\% & 5.8925 & 2.8226 & 8.4824 & 8.5278 & 52.10 \\
+    60\% & 5.5791 & 2.6307 & 8.3383 & 8.3664 & 52.85 \\
+    70\% & 5.0444 & 2.3604 & 8.0090 & 8.0532 & 53.21 \\
+    80\% & 4.2618 & 1.8684 & 7.4438 & 7.4389 & 56.16 \\
+    90\% & 2.4823 & 0.7930 & 8.1046 & 8.1138 & 68.05 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+At the report-relevant 30\% collusion level, GSP revenue is 6.3506 whereas VCG revenue is 3.0794. The absolute revenue loss of VCG relative to GSP is therefore 3.2712, which corresponds to a 51.51\% revenue loss.
+
+Figure~\ref{fig:collusion-loss} visualizes this feedback-driven metric directly. Since VCG is already known to generate lower revenue than GSP in the standard model, the key point is how this percentage changes as collusion intensifies.
+
+\insertfigure{figures/collusion_vcg_revenue_loss_trend}{Revenue loss of VCG relative to GSP as the collusion ratio increases.}{fig:collusion-loss}
+
+The trend is revealing. From 0\% to 40\% collusion, the loss percentage declines slightly from 51.88\% to 51.49\%. Under this interpretation, VCG revenue is falling more slowly than GSP revenue as collusion rises, so VCG appears relatively more robust in the low-to-moderate collusion region. After 40\%, however, the loss percentage begins to increase, reaching 52.10\% at 50\%, 53.21\% at 70\%, 56.16\% at 80\%, and 68.05\% at 90\%. This means that beyond moderate collusion, VCG revenue deteriorates faster relative to GSP, so GSP becomes the relatively more robust mechanism at high collusion levels.
+
+According to Table~\ref{tab:collusion}, collusion has a smaller effect on welfare than on seller revenue. Compared with the balanced heterogeneous baseline, moderate collusion reduces GSP revenue from 6.8093 to 6.3506 and VCG revenue from 3.2764 to 3.0794, while welfare changes only from 8.7601 to 8.7014 in GSP and from 8.6977 to 8.6698 in VCG. At higher collusion levels, VCG even slightly exceeds GSP in welfare, for example at 40\%, 50\%, 60\%, 70\%, and 90\%. Hence, the main impact of collusion in this implementation is stronger on payment competition than on allocative value.
+
+\subsection{Network Latency}
+
+Under latency, the type mix remains fixed at the balanced 1:1:1:1 baseline. Table~\ref{tab:latency-summary} compares seller revenue, social welfare and efficiency for the two mechanisms. GSP revenue falls from 6.8093 to 6.5741 and VCG revenue falls from 3.2764 to 3.1755. Welfare declines from 8.7601 to 8.6393 in GSP and from 8.6977 to 8.5896 in VCG. Efficiency also decreases slightly both in GSP and VCG.
+
+\begin{table}[t]
+  \centering
+  \caption{Baseline vs latency comparison}
+  \label{tab:latency-summary}
+  \small
+  \begin{tabular}{llccc}
+    \toprule
+    Setting & Mech. & Revenue & Welfare & Eff. \\
+    \midrule
+    Baseline & GSP & 6.8093 & 8.7601 & 0.9209 \\
+    Baseline & VCG & 3.2764 & 8.6977 & 0.9209 \\
+    Latency & GSP & 6.5741 & 8.6393 & 0.9082 \\
+    Latency & VCG & 3.1755 & 8.5896 & 0.9094 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+The most direct effect appears in the late-bid rate (Figure~\ref{fig:latency-late-bid}). GSP rises from 0.0072 to 0.1058, and VCG rises from 0.0092 to 0.1040. This indicates that a sizable fraction of bids is excluded once latency is introduced.
+
+\insertfigure{figures/latency_late_bid_rate}{Late-bid rates under the balanced heterogeneous baseline and the latency stress setting.}{fig:latency-late-bid}
+
+\begin{table}[t]
+  \centering
+  \caption{Mean payoff by bidder type under baseline and latency}
+  \label{tab:latency-payoff}
+  \small
+  \begin{tabular}{llcccc}
+    \toprule
+    Setting & Mech. & Truthful & Shaded & Budget & Aggressive \\
+    \midrule
+    Baseline & GSP & 0.0995 & 0.0932 & 0.1034 & 0.0939 \\
+    Baseline & VCG & 0.3197 & 0.1529 & 0.2176 & 0.3882 \\
+    Latency & GSP & 0.0777 & 0.1141 & 0.1154 & 0.1060 \\
+    Latency & VCG & 0.2453 & 0.1885 & 0.2281 & 0.4177 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+Table~\ref{tab:latency-payoff} reports the payoff-by-type comparison for the balanced baseline and the latency setting.
+It further shows that truthful bidders are more negatively affected than aggressive bidders. In GSP, truthful mean payoff drops from 0.0995 to 0.0777, whereas aggressive mean payoff rises from 0.0939 to 0.1060. In VCG, truthful mean payoff declines from 0.3197 to 0.2453, whereas aggressive mean payoff rises from 0.3882 to 0.4177. This suggests that asynchronous network conditions can amplify the advantage of more aggressive or less delay-sensitive bidding behavior.
+
+\section{Discussion}
+
+The simulation results reveal a consistent pattern across all experiment groups. GSP is the stronger mechanism for seller revenue, whereas VCG is the stronger mechanism for bidder-surplus smoothness and payoff equality. This pattern appears in both baselines and persists under heterogeneous bidder mixtures, collusion, and latency stress.
+
+The heterogeneous-mixture experiment shows that market composition mainly changes payment outcomes rather than total welfare. Relative to the balanced baseline, GSP revenue varies from 6.3792 to 7.0471 across the heavy-type profiles, whereas VCG revenue varies from 3.0377 to 3.4082. By contrast, welfare remains within a much narrower range for both mechanisms. This suggests that bidder-type composition primarily affects competitive price pressure and surplus distribution, with GSP exhibiting more stable outcomes than VCG. Also, bidder type with higher weight generally increases payoffs, except for aggressive bidders, who face greater downside risk.
+
+The collusion experiment is especially important because the it shows how the VCG-loss percentage changes as collusion intensifies. From 0\% to 40\% collusion, this percentage declines slightly from 51.88\% to 51.49\%, which suggests that VCG revenue deteriorates more slowly than GSP revenue in the low-to-moderate collusion region. Beyond 40\%, however, the percentage rises and reaches 68.05\% at 90\% collusion, implying that GSP becomes relatively more robust at high collusion levels. Even so, GSP maintains the higher absolute revenue throughout the entire sweep, which aligns with the knowledge from lecture in IERG3280.
+
+The latency experiment highlights that robustness is not only about strategic behavior. Once late bids are excluded, both mechanisms suffer lower revenue, welfare, and efficiency relative to the balanced baseline. At the same time, the payoff-by-type table shows that latency has a distributional effect: truthful bidders are hurt more than aggressive bidders in both mechanisms, while aggressive bidders even see payoff gains under latency stress. This suggests that asynchronous network conditions can reshape competitive advantage across bidder types, not merely reduce aggregate performance. Robust auction evaluation therefore needs to consider both market behavior and system-level timing frictions.
+
+\section{Conclusion}
+
+This project implemented a simulation framework for comparing GSP and VCG auctions in a multi-slot networked environment. The final design followed the proposal goals and later feedback by evaluating heterogeneous bidder mixtures, collusion, and network latency in a one-factor-at-a-time framework with two reference baselines: an all-truthful market and a balanced 1:1:1:1 heterogeneous market.
+
+Three conclusions stand out. First, GSP consistently produces much higher seller revenue than VCG across the two baselines and all three experiment groups. Second, VCG tends to deliver lower payoff dispersion and lower utility inequality, while the heterogeneous-mixture results show that changes in bidder composition influence revenue much more than welfare. Third, robustness depends on the source of deviation from the ideal model. Under collusion, the VCG-loss percentage decreases slightly from 0\% to 40\%, suggesting that VCG is relatively more resilient in the low-to-moderate region, but rises sharply beyond 40\%, suggesting that GSP is relatively more resilient under high collusion. Under latency, both mechanisms lose revenue, welfare, and efficiency because of late-bid exclusion, and truthful bidders are more negatively affected than aggressive bidders.
+
+Overall, the project shows that robustness in networked markets should be evaluated not only through mechanism-theoretic properties, but also through heterogeneous behavior, coordinated bidding, and network timing effects. In this simulation, GSP is the stronger revenue mechanism, while VCG is the stronger mechanism for smoother and more equal bidder outcomes.
+
+\textbf{Limitations.} The reported experiments use a single market size of 20 bidders and 5 slots, so the results may not generalize directly to thinner or larger markets. In addition, heterogeneity, collusion, and latency are modeled in simplified ways, and the design varies one factor at a time rather than studying their interaction.
+
+\textbf{Future work.} A natural extension is to test multiple market sizes, richer bidder strategies, and joint stress scenarios that combine heterogeneity, collusion, and latency. It would also be useful to compare the simulator more directly with empirical auction data or more realistic platform rules.
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}

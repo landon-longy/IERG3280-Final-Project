@@ -1,0 +1,13 @@
+setting,mechanism,truthful,shaded,budget,aggressive
+all_truthful,GSP,0.0817,-,-,-
+all_truthful,VCG,0.2669,-,-,-
+balanced_market,GSP,0.0995,0.0932,0.1034,0.0939
+balanced_market,VCG,0.3197,0.1529,0.2176,0.3882
+truthful_heavy,GSP,0.0958,0.0805,0.0887,0.0841
+truthful_heavy,VCG,0.3021,0.1431,0.2022,0.3499
+shaded_heavy,GSP,0.1234,0.1173,0.1295,0.1204
+shaded_heavy,VCG,0.3809,0.2157,0.2811,0.4222
+budget_heavy,GSP,0.1108,0.1106,0.1209,0.1078
+budget_heavy,VCG,0.3581,0.194,0.2492,0.4019
+aggressive_heavy,GSP,0.0869,0.0762,0.0732,0.0753
+aggressive_heavy,VCG,0.2683,0.1122,0.144,0.3295

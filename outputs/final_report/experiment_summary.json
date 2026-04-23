@@ -1,0 +1,4545 @@
+{
+  "heterogeneous": {
+    "description": "Only type mix changes.",
+    "truthful_reference": {
+      "scenario": "heterogeneous",
+      "rounds": 300,
+      "num_bidders": 20,
+      "num_slots": 5,
+      "value_range": {
+        "min": 0.35,
+        "max": 3.2
+      },
+      "bid_deadline_ms": 120,
+      "latency_scale_ms": 58,
+      "type_mix": {
+        "truthful": 1.0,
+        "shaded": 0.0,
+        "budget": 0.0,
+        "aggressive": 0.0
+      },
+      "type_counts": null,
+      "collusion_rate": 0.3,
+      "summary": {
+        "GSP": {
+          "revenue": 7.2639,
+          "social_welfare": 8.8983,
+          "efficiency": 0.9354,
+          "payoff_mean": 0.3269,
+          "payoff_std": 0.2964,
+          "utility_gini": 0.4716,
+          "truthful_gap": 0.0,
+          "late_bid_rate": 0.0072,
+          "collusion_discount": 0.0,
+          "payoff_by_type": {
+            "truthful": {
+              "mean_payoff": 0.0817,
+              "win_rate": 0.25,
+              "mean_bid": 1.5505
+            }
+          }
+        },
+        "VCG": {
+          "revenue": 3.5263,
+          "social_welfare": 8.8643,
+          "efficiency": 0.9387,
+          "payoff_mean": 1.0676,
+          "payoff_std": 0.2294,
+          "utility_gini": 0.1142,
+          "truthful_gap": 0.0,
+          "late_bid_rate": 0.0092,
+          "collusion_discount": 0.0,
+          "payoff_by_type": {
+            "truthful": {
+              "mean_payoff": 0.2669,
+              "win_rate": 0.25,
+              "mean_bid": 1.5567
+            }
+          }
+        }
+      },
+      "comparisons": {
+        "vcg_minus_gsp_welfare": -0.034,
+        "vcg_minus_gsp_efficiency": 0.0033,
+        "vcg_minus_gsp_payoff_std": -0.067,
+        "vcg_revenue_loss_vs_gsp": 3.7376,
+        "vcg_revenue_loss_pct_vs_gsp": 51.45
+      },
+      "samples": {
+        "GSP": {
+          "top_round_metrics": {
+            "revenue": 8.065,
+            "social_welfare": 9.7607,
+            "efficiency": 0.9939,
+            "payoff_mean": 0.3391,
+            "payoff_std": 0.322,
+            "utility_gini": 0.5013,
+            "on_time_rate": 1.0,
+            "late_bid_rate": 0.0,
+            "truthful_gap": 0.0,
+            "winner_count": 5,
+            "collusion_discount": 0.0
+          },
+          "top_round_allocations": [
+            {
+              "slot": 1,
+              "bidder_id": "b4",
+              "ctr": 1.0,
+              "bid": 3.148,
+              "payment": 2.889,
+              "utility": 0.259,
+              "value": 3.148,
+              "on_time": true
+            },
+            {
+              "slot": 2,
+              "bidder_id": "b7",
+              "ctr": 0.82,
+              "bid": 2.889,
+              "payment": 2.2607,
+              "utility": 0.1082,
+              "value": 2.889,
+              "on_time": true
+            },
+            {
+              "slot": 3,
+              "bidder_id": "b20",
+              "ctr": 0.64,
+              "bid": 2.757,
+              "payment": 1.6448,
+              "utility": 0.3942,
+              "value": 3.186,
+              "on_time": true
+            },
+            {
+              "slot": 4,
+              "bidder_id": "b13",
+              "ctr": 0.49,
+              "bid": 2.57,
+              "payment": 1.252,
+              "utility": 0.0073,
+              "value": 2.57,
+              "on_time": true
+            },
+            {
+              "slot": 5,
+              "bidder_id": "b6",
+              "ctr": 0.37,
+              "bid": 2.555,
+              "payment": 0.0185,
+              "utility": 0.9269,
+              "value": 2.555,
+              "on_time": true
+            }
+          ]
+        },
+        "VCG": {
+          "top_round_metrics": {
+            "revenue": 3.9002,
+            "social_welfare": 9.3918,
+            "efficiency": 0.9521,
+            "payoff_mean": 1.0983,
+            "payoff_std": 0.2083,
+            "utility_gini": 0.1012,
+            "on_time_rate": 1.0,
+            "late_bid_rate": 0.0,
+            "truthful_gap": 0.0,
+            "winner_count": 5,
+            "collusion_discount": 0.0
+          },
+          "top_round_allocations": [
+            {
+              "slot": 1,
+              "bidder_id": "b11",
+              "ctr": 1.0,
+              "bid": 3.168,
+              "payment": 1.6949,
+              "utility": 1.4731,
+              "value": 3.168,
+              "on_time": true
+            },
+            {
+              "slot": 2,
+              "bidder_id": "b17",
+              "ctr": 0.82,
+              "bid": 2.845,
+              "payment": 1.1828,
+              "utility": 1.1501,
+              "value": 2.845,
+              "on_time": true
+            },
+            {
+              "slot": 3,
+              "bidder_id": "b4",
+              "ctr": 0.64,
+              "bid": 2.71,
+              "payment": 0.695,
+              "utility": 1.0394,
+              "value": 2.71,
+              "on_time": true
+            },
+            {
+              "slot": 4,
+              "bidder_id": "b14",
+              "ctr": 0.49,
+              "bid": 2.573,
+              "payment": 0.309,
+              "utility": 0.9517,
+              "value": 2.573,
+              "on_time": true
+            },
+            {
+              "slot": 5,
+              "bidder_id": "b1",
+              "ctr": 0.37,
+              "bid": 2.421,
+              "payment": 0.0185,
+              "utility": 0.8773,
+              "value": 2.421,
+              "on_time": true
+            }
+          ]
+        }
+      }
+    },
+    "baseline_reference": {
+      "scenario": "heterogeneous",
+      "rounds": 300,
+      "num_bidders": 20,
+      "num_slots": 5,
+      "value_range": {
+        "min": 0.35,
+        "max": 3.2
+      },
+      "bid_deadline_ms": 120,
+      "latency_scale_ms": 58,
+      "type_mix": {
+        "truthful": 0.25,
+        "shaded": 0.25,
+        "budget": 0.25,
+        "aggressive": 0.25
+      },
+      "type_counts": null,
+      "collusion_rate": 0.3,
+      "summary": {
+        "GSP": {
+          "revenue": 6.8093,
+          "social_welfare": 8.7601,
+          "efficiency": 0.9209,
+          "payoff_mean": 0.3902,
+          "payoff_std": 0.312,
+          "utility_gini": 0.4284,
+          "truthful_gap": 0.1824,
+          "late_bid_rate": 0.0072,
+          "collusion_discount": 0.0,
+          "payoff_by_type": {
+            "truthful": {
+              "mean_payoff": 0.0995,
+              "win_rate": 0.3142,
+              "mean_bid": 1.5531
+            },
+            "aggressive": {
+              "mean_payoff": 0.0939,
+              "win_rate": 0.3613,
+              "mean_bid": 1.6751
+            },
+            "shaded": {
+              "mean_payoff": 0.0932,
+              "win_rate": 0.1466,
+              "mean_bid": 1.2152
+            },
+            "budget": {
+              "mean_payoff": 0.1034,
+              "win_rate": 0.1791,
+              "mean_bid": 1.309
+            }
+          }
+        },
+        "VCG": {
+          "revenue": 3.2764,
+          "social_welfare": 8.6977,
+          "efficiency": 0.9209,
+          "payoff_mean": 1.0843,
+          "payoff_std": 0.2634,
+          "utility_gini": 0.13,
+          "truthful_gap": 0.1824,
+          "late_bid_rate": 0.0092,
+          "collusion_discount": 0.0,
+          "payoff_by_type": {
+            "aggressive": {
+              "mean_payoff": 0.3882,
+              "win_rate": 0.3747,
+              "mean_bid": 1.7041
+            },
+            "shaded": {
+              "mean_payoff": 0.1529,
+              "win_rate": 0.1303,
+              "mean_bid": 1.2248
+            },
+            "truthful": {
+              "mean_payoff": 0.3197,
+              "win_rate": 0.2965,
+              "mean_bid": 1.5218
+            },
+            "budget": {
+              "mean_payoff": 0.2176,
+              "win_rate": 0.1927,
+              "mean_bid": 1.3202
+            }
+          }
+        }
+      },
+      "comparisons": {
+        "vcg_minus_gsp_welfare": -0.0624,
+        "vcg_minus_gsp_efficiency": 0.0,
+        "vcg_minus_gsp_payoff_std": -0.0486,
+        "vcg_revenue_loss_vs_gsp": 3.5329,
+        "vcg_revenue_loss_pct_vs_gsp": 51.88
+      },
+      "samples": {
+        "GSP": {
+          "top_round_metrics": {
+            "revenue": 6.6173,
+            "social_welfare": 8.7327,
+            "efficiency": 0.8892,
+            "payoff_mean": 0.4231,
+            "payoff_std": 0.4331,
+            "utility_gini": 0.5048,
+            "on_time_rate": 1.0,
+            "late_bid_rate": 0.0,
+            "truthful_gap": 0.3058,
+            "winner_count": 5,
+            "collusion_discount": 0.0
+          },
+          "top_round_allocations": [
+            {
+              "slot": 1,
+              "bidder_id": "b7",
+              "ctr": 1.0,
+              "bid": 2.485,
+              "payment": 2.397,
+              "utility": 0.492,
+              "value": 2.889,
+              "on_time": true
+            },
+            {
+              "slot": 2,
+              "bidder_id": "b9",
+              "ctr": 0.82,
+              "bid": 2.397,
+              "payment": 1.7786,
+              "utility": 0.0394,
+              "value": 2.217,
+              "on_time": true
+            },
+            {
+              "slot": 3,
+              "bidder_id": "b14",
+              "ctr": 0.64,
+              "bid": 2.169,
+              "payment": 1.3805,
+              "utility": -0.0806,
+              "value": 2.031,
+              "on_time": true
+            },
+            {
+              "slot": 4,
+              "bidder_id": "b20",
+              "ctr": 0.49,
+              "bid": 2.157,
+              "payment": 1.0427,
+              "utility": 0.5184,
+              "value": 3.186,
+              "on_time": true
+            },
+            {
+              "slot": 5,
+              "bidder_id": "b4",
+              "ctr": 0.37,
+              "bid": 2.128,
+              "payment": 0.0185,
+              "utility": 1.1463,
+              "value": 3.148,
+              "on_time": true
+            }
+          ]
+        },
+        "VCG": {
+          "top_round_metrics": {
+            "revenue": 3.7106,
+            "social_welfare": 9.2241,
+            "efficiency": 0.9351,
+            "payoff_mean": 1.1027,
+            "payoff_std": 0.2433,
+            "utility_gini": 0.1086,
+            "on_time_rate": 1.0,
+            "late_bid_rate": 0.0,
+            "truthful_gap": 0.1887,
+            "winner_count": 5,
+            "collusion_discount": 0.0
+          },
+          "top_round_allocations": [
+            {
+              "slot": 1,
+              "bidder_id": "b11",
+              "ctr": 1.0,
+              "bid": 3.368,
+              "payment": 1.5991,
+              "utility": 1.5689,
+              "value": 3.168,
+              "on_time": true
+            },
+            {
+              "slot": 2,
+              "bidder_id": "b14",
+              "ctr": 0.82,
+              "bid": 2.642,
+              "payment": 1.1236,
+              "utility": 0.9863,
+              "value": 2.573,
+              "on_time": true
+            },
+            {
+              "slot": 3,
+              "bidder_id": "b1",
+              "ctr": 0.64,
+              "bid": 2.506,
+              "payment": 0.6725,
+              "utility": 0.8769,
+              "value": 2.421,
+              "on_time": true
+            },
+            {
+              "slot": 4,
+              "bidder_id": "b17",
+              "ctr": 0.49,
+              "bid": 2.504,
+              "payment": 0.2969,
+              "utility": 1.0972,
+              "value": 2.845,
+              "on_time": true
+            },
+            {
+              "slot": 5,
+              "bidder_id": "b4",
+              "ctr": 0.37,
+              "bid": 2.32,
+              "payment": 0.0185,
+              "utility": 0.9842,
+              "value": 2.71,
+              "on_time": true
+            }
+          ]
+        }
+      }
+    },
+    "profiles": {
+      "truthful_heavy": {
+        "scenario": "heterogeneous",
+        "rounds": 300,
+        "num_bidders": 20,
+        "num_slots": 5,
+        "value_range": {
+          "min": 0.35,
+          "max": 3.2
+        },
+        "bid_deadline_ms": 120,
+        "latency_scale_ms": 58,
+        "type_mix": {
+          "truthful": 0.55,
+          "shaded": 0.15,
+          "budget": 0.15,
+          "aggressive": 0.15
+        },
+        "type_counts": null,
+        "collusion_rate": 0.3,
+        "summary": {
+          "GSP": {
+            "revenue": 6.9736,
+            "social_welfare": 8.7868,
+            "efficiency": 0.9237,
+            "payoff_mean": 0.3626,
+            "payoff_std": 0.3043,
+            "utility_gini": 0.4438,
+            "truthful_gap": 0.1133,
+            "late_bid_rate": 0.0072,
+            "collusion_discount": 0.0,
+            "payoff_by_type": {
+              "truthful": {
+                "mean_payoff": 0.0958,
+                "win_rate": 0.2853,
+                "mean_bid": 1.5425
+              },
+              "aggressive": {
+                "mean_payoff": 0.0841,
+                "win_rate": 0.3348,
+                "mean_bid": 1.6639
+              },
+              "shaded": {
+                "mean_payoff": 0.0805,
+                "win_rate": 0.1311,
+                "mean_bid": 1.2401
+              },
+              "budget": {
+                "mean_payoff": 0.0887,
+                "win_rate": 0.1585,
+                "mean_bid": 1.3055
+              }
+            }
+          },
+          "VCG": {
+            "revenue": 3.3475,
+            "social_welfare": 8.7367,
+            "efficiency": 0.9253,
+            "payoff_mean": 1.0778,
+            "payoff_std": 0.2549,
+            "utility_gini": 0.1264,
+            "truthful_gap": 0.1195,
+            "late_bid_rate": 0.0092,
+            "collusion_discount": 0.0,
+            "payoff_by_type": {
+              "budget": {
+                "mean_payoff": 0.2022,
+                "win_rate": 0.1787,
+                "mean_bid": 1.309
+              },
+              "truthful": {
+                "mean_payoff": 0.3021,
+                "win_rate": 0.2792,
+                "mean_bid": 1.5389
+              },
+              "shaded": {
+                "mean_payoff": 0.1431,
+                "win_rate": 0.1301,
+                "mean_bid": 1.2356
+              },
+              "aggressive": {
+                "mean_payoff": 0.3499,
+                "win_rate": 0.3395,
+                "mean_bid": 1.6888
+              }
+            }
+          }
+        },
+        "comparisons": {
+          "vcg_minus_gsp_welfare": -0.0501,
+          "vcg_minus_gsp_efficiency": 0.0016,
+          "vcg_minus_gsp_payoff_std": -0.0494,
+          "vcg_revenue_loss_vs_gsp": 3.6261,
+          "vcg_revenue_loss_pct_vs_gsp": 52.0
+        },
+        "samples": {
+          "GSP": {
+            "top_round_metrics": {
+              "revenue": 7.6799,
+              "social_welfare": 9.1021,
+              "efficiency": 0.9268,
+              "payoff_mean": 0.2844,
+              "payoff_std": 0.2978,
+              "utility_gini": 0.4968,
+              "on_time_rate": 1.0,
+              "late_bid_rate": 0.0,
+              "truthful_gap": 0.1312,
+              "winner_count": 5,
+              "collusion_discount": 0.0
+            },
+            "top_round_allocations": [
+              {
+                "slot": 1,
+                "bidder_id": "b4",
+                "ctr": 1.0,
+                "bid": 3.148,
+                "payment": 2.889,
+                "utility": 0.259,
+                "value": 3.148,
+                "on_time": true
+              },
+              {
+                "slot": 2,
+                "bidder_id": "b7",
+                "ctr": 0.82,
+                "bid": 2.889,
+                "payment": 2.1074,
+                "utility": 0.2616,
+                "value": 2.889,
+                "on_time": true
+              },
+              {
+                "slot": 3,
+                "bidder_id": "b13",
+                "ctr": 0.64,
+                "bid": 2.57,
+                "payment": 1.5341,
+                "utility": 0.1107,
+                "value": 2.57,
+                "on_time": true
+              },
+              {
+                "slot": 4,
+                "bidder_id": "b9",
+                "ctr": 0.49,
+                "bid": 2.397,
+                "payment": 1.1309,
+                "utility": -0.0446,
+                "value": 2.217,
+                "on_time": true
+              },
+              {
+                "slot": 5,
+                "bidder_id": "b3",
+                "ctr": 0.37,
+                "bid": 2.308,
+                "payment": 0.0185,
+                "utility": 0.8355,
+                "value": 2.308,
+                "on_time": true
+              }
+            ]
+          },
+          "VCG": {
+            "top_round_metrics": {
+              "revenue": 3.6599,
+              "social_welfare": 9.2803,
+              "efficiency": 0.9408,
+              "payoff_mean": 1.1241,
+              "payoff_std": 0.2452,
+              "utility_gini": 0.1175,
+              "on_time_rate": 1.0,
+              "late_bid_rate": 0.0,
+              "truthful_gap": 0.1146,
+              "winner_count": 5,
+              "collusion_discount": 0.0
+            },
+            "top_round_allocations": [
+              {
+                "slot": 1,
+                "bidder_id": "b11",
+                "ctr": 1.0,
+                "bid": 3.368,
+                "payment": 1.6187,
+                "utility": 1.5493,
+                "value": 3.168,
+                "on_time": true
+              },
+              {
+                "slot": 2,
+                "bidder_id": "b17",
+                "ctr": 0.82,
+                "bid": 2.845,
+                "payment": 1.1066,
+                "utility": 1.2263,
+                "value": 2.845,
+                "on_time": true
+              },
+              {
+                "slot": 3,
+                "bidder_id": "b14",
+                "ctr": 0.64,
+                "bid": 2.642,
+                "payment": 0.631,
+                "utility": 1.0157,
+                "value": 2.573,
+                "on_time": true
+              },
+              {
+                "slot": 4,
+                "bidder_id": "b16",
+                "ctr": 0.49,
+                "bid": 2.306,
+                "payment": 0.2851,
+                "utility": 0.8448,
+                "value": 2.306,
+                "on_time": true
+              },
+              {
+                "slot": 5,
+                "bidder_id": "b4",
+                "ctr": 0.37,
+                "bid": 2.222,
+                "payment": 0.0185,
+                "utility": 0.9842,
+                "value": 2.71,
+                "on_time": true
+              }
+            ]
+          }
+        }
+      },
+      "shaded_heavy": {
+        "scenario": "heterogeneous",
+        "rounds": 300,
+        "num_bidders": 20,
+        "num_slots": 5,
+        "value_range": {
+          "min": 0.35,
+          "max": 3.2
+        },
+        "bid_deadline_ms": 120,
+        "latency_scale_ms": 58,
+        "type_mix": {
+          "truthful": 0.15,
+          "shaded": 0.55,
+          "budget": 0.15,
+          "aggressive": 0.15
+        },
+        "type_counts": null,
+        "collusion_rate": 0.3,
+        "summary": {
+          "GSP": {
+            "revenue": 6.366,
+            "social_welfare": 8.776,
+            "efficiency": 0.9226,
+            "payoff_mean": 0.482,
+            "payoff_std": 0.2924,
+            "utility_gini": 0.3377,
+            "truthful_gap": 0.2556,
+            "late_bid_rate": 0.0072,
+            "collusion_discount": 0.0,
+            "payoff_by_type": {
+              "truthful": {
+                "mean_payoff": 0.1234,
+                "win_rate": 0.3591,
+                "mean_bid": 1.5564
+              },
+              "aggressive": {
+                "mean_payoff": 0.1204,
+                "win_rate": 0.3991,
+                "mean_bid": 1.6639
+              },
+              "shaded": {
+                "mean_payoff": 0.1173,
+                "win_rate": 0.1872,
+                "mean_bid": 1.2232
+              },
+              "budget": {
+                "mean_payoff": 0.1295,
+                "win_rate": 0.2223,
+                "mean_bid": 1.3055
+              }
+            }
+          },
+          "VCG": {
+            "revenue": 3.055,
+            "social_welfare": 8.692,
+            "efficiency": 0.9205,
+            "payoff_mean": 1.1274,
+            "payoff_std": 0.285,
+            "utility_gini": 0.1356,
+            "truthful_gap": 0.2622,
+            "late_bid_rate": 0.0092,
+            "collusion_discount": 0.0,
+            "payoff_by_type": {
+              "budget": {
+                "mean_payoff": 0.2811,
+                "win_rate": 0.2387,
+                "mean_bid": 1.309
+              },
+              "shaded": {
+                "mean_payoff": 0.2157,
+                "win_rate": 0.1855,
+                "mean_bid": 1.2219
+              },
+              "truthful": {
+                "mean_payoff": 0.3809,
+                "win_rate": 0.3441,
+                "mean_bid": 1.526
+              },
+              "aggressive": {
+                "mean_payoff": 0.4222,
+                "win_rate": 0.3991,
+                "mean_bid": 1.6888
+              }
+            }
+          }
+        },
+        "comparisons": {
+          "vcg_minus_gsp_welfare": -0.084,
+          "vcg_minus_gsp_efficiency": -0.0021,
+          "vcg_minus_gsp_payoff_std": -0.0074,
+          "vcg_revenue_loss_vs_gsp": 3.311,
+          "vcg_revenue_loss_pct_vs_gsp": 52.01
+        },
+        "samples": {
+          "GSP": {
+            "top_round_metrics": {
+              "revenue": 6.4615,
+              "social_welfare": 9.2394,
+              "efficiency": 0.9408,
+              "payoff_mean": 0.5556,
+              "payoff_std": 0.2936,
+              "utility_gini": 0.2831,
+              "on_time_rate": 1.0,
+              "late_bid_rate": 0.0,
+              "truthful_gap": 0.3388,
+              "winner_count": 5,
+              "collusion_discount": 0.0
+            },
+            "top_round_allocations": [
+              {
+                "slot": 1,
+                "bidder_id": "b7",
+                "ctr": 1.0,
+                "bid": 2.485,
+                "payment": 2.397,
+                "utility": 0.492,
+                "value": 2.889,
+                "on_time": true
+              },
+              {
+                "slot": 2,
+                "bidder_id": "b9",
+                "ctr": 0.82,
+                "bid": 2.397,
+                "payment": 1.7761,
+                "utility": 0.0418,
+                "value": 2.217,
+                "on_time": true
+              },
+              {
+                "slot": 3,
+                "bidder_id": "b20",
+                "ctr": 0.64,
+                "bid": 2.166,
+                "payment": 1.3619,
+                "utility": 0.6771,
+                "value": 3.186,
+                "on_time": true
+              },
+              {
+                "slot": 4,
+                "bidder_id": "b4",
+                "ctr": 0.49,
+                "bid": 2.128,
+                "payment": 0.908,
+                "utility": 0.6346,
+                "value": 3.148,
+                "on_time": true
+              },
+              {
+                "slot": 5,
+                "bidder_id": "b13",
+                "ctr": 0.37,
+                "bid": 1.853,
+                "payment": 0.0185,
+                "utility": 0.9324,
+                "value": 2.57,
+                "on_time": true
+              }
+            ]
+          },
+          "VCG": {
+            "top_round_metrics": {
+              "revenue": 3.5359,
+              "social_welfare": 9.3223,
+              "efficiency": 0.9451,
+              "payoff_mean": 1.1573,
+              "payoff_std": 0.2547,
+              "utility_gini": 0.1143,
+              "on_time_rate": 1.0,
+              "late_bid_rate": 0.0,
+              "truthful_gap": 0.2053,
+              "winner_count": 5,
+              "collusion_discount": 0.0
+            },
+            "top_round_allocations": [
+              {
+                "slot": 1,
+                "bidder_id": "b11",
+                "ctr": 1.0,
+                "bid": 3.368,
+                "payment": 1.5447,
+                "utility": 1.6233,
+                "value": 3.168,
+                "on_time": true
+              },
+              {
+                "slot": 2,
+                "bidder_id": "b14",
+                "ctr": 0.82,
+                "bid": 2.642,
+                "payment": 1.0692,
+                "utility": 1.0407,
+                "value": 2.573,
+                "on_time": true
+              },
+              {
+                "slot": 3,
+                "bidder_id": "b17",
+                "ctr": 0.64,
+                "bid": 2.504,
+                "payment": 0.6184,
+                "utility": 1.2024,
+                "value": 2.845,
+                "on_time": true
+              },
+              {
+                "slot": 4,
+                "bidder_id": "b4",
+                "ctr": 0.49,
+                "bid": 2.222,
+                "payment": 0.2851,
+                "utility": 1.0428,
+                "value": 2.71,
+                "on_time": true
+              },
+              {
+                "slot": 5,
+                "bidder_id": "b1",
+                "ctr": 0.37,
+                "bid": 2.222,
+                "payment": 0.0185,
+                "utility": 0.8773,
+                "value": 2.421,
+                "on_time": true
+              }
+            ]
+          }
+        }
+      },
+      "budget_heavy": {
+        "scenario": "heterogeneous",
+        "rounds": 300,
+        "num_bidders": 20,
+        "num_slots": 5,
+        "value_range": {
+          "min": 0.35,
+          "max": 3.2
+        },
+        "bid_deadline_ms": 120,
+        "latency_scale_ms": 58,
+        "type_mix": {
+          "truthful": 0.15,
+          "shaded": 0.15,
+          "budget": 0.55,
+          "aggressive": 0.15
+        },
+        "type_counts": null,
+        "collusion_rate": 0.3,
+        "summary": {
+          "GSP": {
+            "revenue": 6.4885,
+            "social_welfare": 8.8062,
+            "efficiency": 0.9259,
+            "payoff_mean": 0.4635,
+            "payoff_std": 0.291,
+            "utility_gini": 0.3441,
+            "truthful_gap": 0.209,
+            "late_bid_rate": 0.0072,
+            "collusion_discount": 0.0,
+            "payoff_by_type": {
+              "truthful": {
+                "mean_payoff": 0.1108,
+                "win_rate": 0.3384,
+                "mean_bid": 1.5564
+              },
+              "aggressive": {
+                "mean_payoff": 0.1078,
+                "win_rate": 0.3901,
+                "mean_bid": 1.6639
+              },
+              "budget": {
+                "mean_payoff": 0.1209,
+                "win_rate": 0.2069,
+                "mean_bid": 1.3045
+              },
+              "shaded": {
+                "mean_payoff": 0.1106,
+                "win_rate": 0.1796,
+                "mean_bid": 1.2156
+              }
+            }
+          },
+          "VCG": {
+            "revenue": 3.1383,
+            "social_welfare": 8.7429,
+            "efficiency": 0.9258,
+            "payoff_mean": 1.1209,
+            "payoff_std": 0.2778,
+            "utility_gini": 0.1332,
+            "truthful_gap": 0.2108,
+            "late_bid_rate": 0.0092,
+            "collusion_discount": 0.0,
+            "payoff_by_type": {
+              "budget": {
+                "mean_payoff": 0.2492,
+                "win_rate": 0.2169,
+                "mean_bid": 1.3164
+              },
+              "shaded": {
+                "mean_payoff": 0.194,
+                "win_rate": 0.1665,
+                "mean_bid": 1.2154
+              },
+              "truthful": {
+                "mean_payoff": 0.3581,
+                "win_rate": 0.323,
+                "mean_bid": 1.526
+              },
+              "aggressive": {
+                "mean_payoff": 0.4019,
+                "win_rate": 0.3807,
+                "mean_bid": 1.6888
+              }
+            }
+          }
+        },
+        "comparisons": {
+          "vcg_minus_gsp_welfare": -0.0633,
+          "vcg_minus_gsp_efficiency": -0.0001,
+          "vcg_minus_gsp_payoff_std": -0.0132,
+          "vcg_revenue_loss_vs_gsp": 3.3502,
+          "vcg_revenue_loss_pct_vs_gsp": 51.63
+        },
+        "samples": {
+          "GSP": {
+            "top_round_metrics": {
+              "revenue": 6.5188,
+              "social_welfare": 9.1425,
+              "efficiency": 0.9309,
+              "payoff_mean": 0.5247,
+              "payoff_std": 0.2642,
+              "utility_gini": 0.268,
+              "on_time_rate": 1.0,
+              "late_bid_rate": 0.0,
+              "truthful_gap": 0.3078,
+              "winner_count": 5,
+              "collusion_discount": 0.0
+            },
+            "top_round_allocations": [
+              {
+                "slot": 1,
+                "bidder_id": "b7",
+                "ctr": 1.0,
+                "bid": 2.505,
+                "payment": 2.397,
+                "utility": 0.492,
+                "value": 2.889,
+                "on_time": true
+              },
+              {
+                "slot": 2,
+                "bidder_id": "b9",
+                "ctr": 0.82,
+                "bid": 2.397,
+                "payment": 1.7687,
+                "utility": 0.0492,
+                "value": 2.217,
+                "on_time": true
+              },
+              {
+                "slot": 3,
+                "bidder_id": "b20",
+                "ctr": 0.64,
+                "bid": 2.157,
+                "payment": 1.3619,
+                "utility": 0.6771,
+                "value": 3.186,
+                "on_time": true
+              },
+              {
+                "slot": 4,
+                "bidder_id": "b4",
+                "ctr": 0.49,
+                "bid": 2.128,
+                "payment": 0.9727,
+                "utility": 0.5699,
+                "value": 3.148,
+                "on_time": true
+              },
+              {
+                "slot": 5,
+                "bidder_id": "b3",
+                "ctr": 0.37,
+                "bid": 1.985,
+                "payment": 0.0185,
+                "utility": 0.8355,
+                "value": 2.308,
+                "on_time": true
+              }
+            ]
+          },
+          "VCG": {
+            "top_round_metrics": {
+              "revenue": 3.58,
+              "social_welfare": 9.3223,
+              "efficiency": 0.9451,
+              "payoff_mean": 1.1485,
+              "payoff_std": 0.2502,
+              "utility_gini": 0.1131,
+              "on_time_rate": 1.0,
+              "late_bid_rate": 0.0,
+              "truthful_gap": 0.191,
+              "winner_count": 5,
+              "collusion_discount": 0.0
+            },
+            "top_round_allocations": [
+              {
+                "slot": 1,
+                "bidder_id": "b11",
+                "ctr": 1.0,
+                "bid": 3.368,
+                "payment": 1.5594,
+                "utility": 1.6086,
+                "value": 3.168,
+                "on_time": true
+              },
+              {
+                "slot": 2,
+                "bidder_id": "b14",
+                "ctr": 0.82,
+                "bid": 2.642,
+                "payment": 1.0839,
+                "utility": 1.026,
+                "value": 2.573,
+                "on_time": true
+              },
+              {
+                "slot": 3,
+                "bidder_id": "b17",
+                "ctr": 0.64,
+                "bid": 2.504,
+                "payment": 0.6331,
+                "utility": 1.1877,
+                "value": 2.845,
+                "on_time": true
+              },
+              {
+                "slot": 4,
+                "bidder_id": "b4",
+                "ctr": 0.49,
+                "bid": 2.32,
+                "payment": 0.2851,
+                "utility": 1.0428,
+                "value": 2.71,
+                "on_time": true
+              },
+              {
+                "slot": 5,
+                "bidder_id": "b1",
+                "ctr": 0.37,
+                "bid": 2.222,
+                "payment": 0.0185,
+                "utility": 0.8773,
+                "value": 2.421,
+                "on_time": true
+              }
+            ]
+          }
+        }
+      },
+      "aggressive_heavy": {
+        "scenario": "heterogeneous",
+        "rounds": 300,
+        "num_bidders": 20,
+        "num_slots": 5,
+        "value_range": {
+          "min": 0.35,
+          "max": 3.2
+        },
+        "bid_deadline_ms": 120,
+        "latency_scale_ms": 58,
+        "type_mix": {
+          "truthful": 0.15,
+          "shaded": 0.15,
+          "budget": 0.15,
+          "aggressive": 0.55
+        },
+        "type_counts": null,
+        "collusion_rate": 0.3,
+        "summary": {
+          "GSP": {
+            "revenue": 7.25,
+            "social_welfare": 8.7873,
+            "efficiency": 0.9238,
+            "payoff_mean": 0.3075,
+            "payoff_std": 0.327,
+            "utility_gini": 0.5202,
+            "truthful_gap": 0.1583,
+            "late_bid_rate": 0.0072,
+            "collusion_discount": 0.0,
+            "payoff_by_type": {
+              "truthful": {
+                "mean_payoff": 0.0869,
+                "win_rate": 0.2731,
+                "mean_bid": 1.5564
+              },
+              "aggressive": {
+                "mean_payoff": 0.0753,
+                "win_rate": 0.3117,
+                "mean_bid": 1.6783
+              },
+              "budget": {
+                "mean_payoff": 0.0732,
+                "win_rate": 0.1274,
+                "mean_bid": 1.2887
+              },
+              "shaded": {
+                "mean_payoff": 0.0762,
+                "win_rate": 0.1186,
+                "mean_bid": 1.2156
+              }
+            }
+          },
+          "VCG": {
+            "revenue": 3.511,
+            "social_welfare": 8.7025,
+            "efficiency": 0.9215,
+            "payoff_mean": 1.0383,
+            "payoff_std": 0.2337,
+            "utility_gini": 0.1195,
+            "truthful_gap": 0.1593,
+            "late_bid_rate": 0.0092,
+            "collusion_discount": 0.0,
+            "payoff_by_type": {
+              "aggressive": {
+                "mean_payoff": 0.3295,
+                "win_rate": 0.3253,
+                "mean_bid": 1.6969
+              },
+              "budget": {
+                "mean_payoff": 0.144,
+                "win_rate": 0.1265,
+                "mean_bid": 1.2939
+              },
+              "shaded": {
+                "mean_payoff": 0.1122,
+                "win_rate": 0.0984,
+                "mean_bid": 1.2154
+              },
+              "truthful": {
+                "mean_payoff": 0.2683,
+                "win_rate": 0.2508,
+                "mean_bid": 1.526
+              }
+            }
+          }
+        },
+        "comparisons": {
+          "vcg_minus_gsp_welfare": -0.0848,
+          "vcg_minus_gsp_efficiency": -0.0023,
+          "vcg_minus_gsp_payoff_std": -0.0933,
+          "vcg_revenue_loss_vs_gsp": 3.739,
+          "vcg_revenue_loss_pct_vs_gsp": 51.57
+        },
+        "samples": {
+          "GSP": {
+            "top_round_metrics": {
+              "revenue": 7.3445,
+              "social_welfare": 8.9679,
+              "efficiency": 0.9131,
+              "payoff_mean": 0.3247,
+              "payoff_std": 0.273,
+              "utility_gini": 0.4654,
+              "on_time_rate": 1.0,
+              "late_bid_rate": 0.0,
+              "truthful_gap": 0.2376,
+              "winner_count": 5,
+              "collusion_discount": 0.0
+            },
+            "top_round_allocations": [
+              {
+                "slot": 1,
+                "bidder_id": "b20",
+                "ctr": 1.0,
+                "bid": 3.033,
+                "payment": 2.675,
+                "utility": 0.511,
+                "value": 3.186,
+                "on_time": true
+              },
+              {
+                "slot": 2,
+                "bidder_id": "b6",
+                "ctr": 0.82,
+                "bid": 2.675,
+                "payment": 2.0541,
+                "utility": 0.041,
+                "value": 2.555,
+                "on_time": true
+              },
+              {
+                "slot": 3,
+                "bidder_id": "b7",
+                "ctr": 0.64,
+                "bid": 2.505,
+                "payment": 1.5341,
+                "utility": 0.3149,
+                "value": 2.889,
+                "on_time": true
+              },
+              {
+                "slot": 4,
+                "bidder_id": "b9",
+                "ctr": 0.49,
+                "bid": 2.397,
+                "payment": 1.0628,
+                "utility": 0.0235,
+                "value": 2.217,
+                "on_time": true
+              },
+              {
+                "slot": 5,
+                "bidder_id": "b14",
+                "ctr": 0.37,
+                "bid": 2.169,
+                "payment": 0.0185,
+                "utility": 0.733,
+                "value": 2.031,
+                "on_time": true
+              }
+            ]
+          },
+          "VCG": {
+            "top_round_metrics": {
+              "revenue": 3.9089,
+              "social_welfare": 9.0832,
+              "efficiency": 0.9209,
+              "payoff_mean": 1.0349,
+              "payoff_std": 0.236,
+              "utility_gini": 0.1138,
+              "on_time_rate": 1.0,
+              "late_bid_rate": 0.0,
+              "truthful_gap": 0.1343,
+              "winner_count": 5,
+              "collusion_discount": 0.0
+            },
+            "top_round_allocations": [
+              {
+                "slot": 1,
+                "bidder_id": "b11",
+                "ctr": 1.0,
+                "bid": 3.368,
+                "payment": 1.6823,
+                "utility": 1.4857,
+                "value": 3.168,
+                "on_time": true
+              },
+              {
+                "slot": 2,
+                "bidder_id": "b4",
+                "ctr": 0.82,
+                "bid": 2.778,
+                "payment": 1.1822,
+                "utility": 1.04,
+                "value": 2.71,
+                "on_time": true
+              },
+              {
+                "slot": 3,
+                "bidder_id": "b14",
+                "ctr": 0.64,
+                "bid": 2.642,
+                "payment": 0.7067,
+                "utility": 0.94,
+                "value": 2.573,
+                "on_time": true
+              },
+              {
+                "slot": 4,
+                "bidder_id": "b5",
+                "ctr": 0.49,
+                "bid": 2.583,
+                "payment": 0.3192,
+                "utility": 0.8313,
+                "value": 2.348,
+                "on_time": true
+              },
+              {
+                "slot": 5,
+                "bidder_id": "b1",
+                "ctr": 0.37,
+                "bid": 2.506,
+                "payment": 0.0185,
+                "utility": 0.8773,
+                "value": 2.421,
+                "on_time": true
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "collusion": {
+    "description": "Type mix is fixed at the balanced 1:1:1:1 market and only bidding-ring size changes.",
+    "truthful_reference": {
+      "scenario": "heterogeneous",
+      "rounds": 300,
+      "num_bidders": 20,
+      "num_slots": 5,
+      "value_range": {
+        "min": 0.35,
+        "max": 3.2
+      },
+      "bid_deadline_ms": 120,
+      "latency_scale_ms": 58,
+      "type_mix": {
+        "truthful": 1.0,
+        "shaded": 0.0,
+        "budget": 0.0,
+        "aggressive": 0.0
+      },
+      "type_counts": null,
+      "collusion_rate": 0.3,
+      "summary": {
+        "GSP": {
+          "revenue": 7.2639,
+          "social_welfare": 8.8983,
+          "efficiency": 0.9354,
+          "payoff_mean": 0.3269,
+          "payoff_std": 0.2964,
+          "utility_gini": 0.4716,
+          "truthful_gap": 0.0,
+          "late_bid_rate": 0.0072,
+          "collusion_discount": 0.0,
+          "payoff_by_type": {
+            "truthful": {
+              "mean_payoff": 0.0817,
+              "win_rate": 0.25,
+              "mean_bid": 1.5505
+            }
+          }
+        },
+        "VCG": {
+          "revenue": 3.5263,
+          "social_welfare": 8.8643,
+          "efficiency": 0.9387,
+          "payoff_mean": 1.0676,
+          "payoff_std": 0.2294,
+          "utility_gini": 0.1142,
+          "truthful_gap": 0.0,
+          "late_bid_rate": 0.0092,
+          "collusion_discount": 0.0,
+          "payoff_by_type": {
+            "truthful": {
+              "mean_payoff": 0.2669,
+              "win_rate": 0.25,
+              "mean_bid": 1.5567
+            }
+          }
+        }
+      },
+      "comparisons": {
+        "vcg_minus_gsp_welfare": -0.034,
+        "vcg_minus_gsp_efficiency": 0.0033,
+        "vcg_minus_gsp_payoff_std": -0.067,
+        "vcg_revenue_loss_vs_gsp": 3.7376,
+        "vcg_revenue_loss_pct_vs_gsp": 51.45
+      },
+      "samples": {
+        "GSP": {
+          "top_round_metrics": {
+            "revenue": 8.065,
+            "social_welfare": 9.7607,
+            "efficiency": 0.9939,
+            "payoff_mean": 0.3391,
+            "payoff_std": 0.322,
+            "utility_gini": 0.5013,
+            "on_time_rate": 1.0,
+            "late_bid_rate": 0.0,
+            "truthful_gap": 0.0,
+            "winner_count": 5,
+            "collusion_discount": 0.0
+          },
+          "top_round_allocations": [
+            {
+              "slot": 1,
+              "bidder_id": "b4",
+              "ctr": 1.0,
+              "bid": 3.148,
+              "payment": 2.889,
+              "utility": 0.259,
+              "value": 3.148,
+              "on_time": true
+            },
+            {
+              "slot": 2,
+              "bidder_id": "b7",
+              "ctr": 0.82,
+              "bid": 2.889,
+              "payment": 2.2607,
+              "utility": 0.1082,
+              "value": 2.889,
+              "on_time": true
+            },
+            {
+              "slot": 3,
+              "bidder_id": "b20",
+              "ctr": 0.64,
+              "bid": 2.757,
+              "payment": 1.6448,
+              "utility": 0.3942,
+              "value": 3.186,
+              "on_time": true
+            },
+            {
+              "slot": 4,
+              "bidder_id": "b13",
+              "ctr": 0.49,
+              "bid": 2.57,
+              "payment": 1.252,
+              "utility": 0.0073,
+              "value": 2.57,
+              "on_time": true
+            },
+            {
+              "slot": 5,
+              "bidder_id": "b6",
+              "ctr": 0.37,
+              "bid": 2.555,
+              "payment": 0.0185,
+              "utility": 0.9269,
+              "value": 2.555,
+              "on_time": true
+            }
+          ]
+        },
+        "VCG": {
+          "top_round_metrics": {
+            "revenue": 3.9002,
+            "social_welfare": 9.3918,
+            "efficiency": 0.9521,
+            "payoff_mean": 1.0983,
+            "payoff_std": 0.2083,
+            "utility_gini": 0.1012,
+            "on_time_rate": 1.0,
+            "late_bid_rate": 0.0,
+            "truthful_gap": 0.0,
+            "winner_count": 5,
+            "collusion_discount": 0.0
+          },
+          "top_round_allocations": [
+            {
+              "slot": 1,
+              "bidder_id": "b11",
+              "ctr": 1.0,
+              "bid": 3.168,
+              "payment": 1.6949,
+              "utility": 1.4731,
+              "value": 3.168,
+              "on_time": true
+            },
+            {
+              "slot": 2,
+              "bidder_id": "b17",
+              "ctr": 0.82,
+              "bid": 2.845,
+              "payment": 1.1828,
+              "utility": 1.1501,
+              "value": 2.845,
+              "on_time": true
+            },
+            {
+              "slot": 3,
+              "bidder_id": "b4",
+              "ctr": 0.64,
+              "bid": 2.71,
+              "payment": 0.695,
+              "utility": 1.0394,
+              "value": 2.71,
+              "on_time": true
+            },
+            {
+              "slot": 4,
+              "bidder_id": "b14",
+              "ctr": 0.49,
+              "bid": 2.573,
+              "payment": 0.309,
+              "utility": 0.9517,
+              "value": 2.573,
+              "on_time": true
+            },
+            {
+              "slot": 5,
+              "bidder_id": "b1",
+              "ctr": 0.37,
+              "bid": 2.421,
+              "payment": 0.0185,
+              "utility": 0.8773,
+              "value": 2.421,
+              "on_time": true
+            }
+          ]
+        }
+      }
+    },
+    "baseline_reference": {
+      "scenario": "heterogeneous",
+      "rounds": 300,
+      "num_bidders": 20,
+      "num_slots": 5,
+      "value_range": {
+        "min": 0.35,
+        "max": 3.2
+      },
+      "bid_deadline_ms": 120,
+      "latency_scale_ms": 58,
+      "type_mix": {
+        "truthful": 0.25,
+        "shaded": 0.25,
+        "budget": 0.25,
+        "aggressive": 0.25
+      },
+      "type_counts": null,
+      "collusion_rate": 0.3,
+      "summary": {
+        "GSP": {
+          "revenue": 6.8093,
+          "social_welfare": 8.7601,
+          "efficiency": 0.9209,
+          "payoff_mean": 0.3902,
+          "payoff_std": 0.312,
+          "utility_gini": 0.4284,
+          "truthful_gap": 0.1824,
+          "late_bid_rate": 0.0072,
+          "collusion_discount": 0.0,
+          "payoff_by_type": {
+            "truthful": {
+              "mean_payoff": 0.0995,
+              "win_rate": 0.3142,
+              "mean_bid": 1.5531
+            },
+            "aggressive": {
+              "mean_payoff": 0.0939,
+              "win_rate": 0.3613,
+              "mean_bid": 1.6751
+            },
+            "shaded": {
+              "mean_payoff": 0.0932,
+              "win_rate": 0.1466,
+              "mean_bid": 1.2152
+            },
+            "budget": {
+              "mean_payoff": 0.1034,
+              "win_rate": 0.1791,
+              "mean_bid": 1.309
+            }
+          }
+        },
+        "VCG": {
+          "revenue": 3.2764,
+          "social_welfare": 8.6977,
+          "efficiency": 0.9209,
+          "payoff_mean": 1.0843,
+          "payoff_std": 0.2634,
+          "utility_gini": 0.13,
+          "truthful_gap": 0.1824,
+          "late_bid_rate": 0.0092,
+          "collusion_discount": 0.0,
+          "payoff_by_type": {
+            "aggressive": {
+              "mean_payoff": 0.3882,
+              "win_rate": 0.3747,
+              "mean_bid": 1.7041
+            },
+            "shaded": {
+              "mean_payoff": 0.1529,
+              "win_rate": 0.1303,
+              "mean_bid": 1.2248
+            },
+            "truthful": {
+              "mean_payoff": 0.3197,
+              "win_rate": 0.2965,
+              "mean_bid": 1.5218
+            },
+            "budget": {
+              "mean_payoff": 0.2176,
+              "win_rate": 0.1927,
+              "mean_bid": 1.3202
+            }
+          }
+        }
+      },
+      "comparisons": {
+        "vcg_minus_gsp_welfare": -0.0624,
+        "vcg_minus_gsp_efficiency": 0.0,
+        "vcg_minus_gsp_payoff_std": -0.0486,
+        "vcg_revenue_loss_vs_gsp": 3.5329,
+        "vcg_revenue_loss_pct_vs_gsp": 51.88
+      },
+      "samples": {
+        "GSP": {
+          "top_round_metrics": {
+            "revenue": 6.6173,
+            "social_welfare": 8.7327,
+            "efficiency": 0.8892,
+            "payoff_mean": 0.4231,
+            "payoff_std": 0.4331,
+            "utility_gini": 0.5048,
+            "on_time_rate": 1.0,
+            "late_bid_rate": 0.0,
+            "truthful_gap": 0.3058,
+            "winner_count": 5,
+            "collusion_discount": 0.0
+          },
+          "top_round_allocations": [
+            {
+              "slot": 1,
+              "bidder_id": "b7",
+              "ctr": 1.0,
+              "bid": 2.485,
+              "payment": 2.397,
+              "utility": 0.492,
+              "value": 2.889,
+              "on_time": true
+            },
+            {
+              "slot": 2,
+              "bidder_id": "b9",
+              "ctr": 0.82,
+              "bid": 2.397,
+              "payment": 1.7786,
+              "utility": 0.0394,
+              "value": 2.217,
+              "on_time": true
+            },
+            {
+              "slot": 3,
+              "bidder_id": "b14",
+              "ctr": 0.64,
+              "bid": 2.169,
+              "payment": 1.3805,
+              "utility": -0.0806,
+              "value": 2.031,
+              "on_time": true
+            },
+            {
+              "slot": 4,
+              "bidder_id": "b20",
+              "ctr": 0.49,
+              "bid": 2.157,
+              "payment": 1.0427,
+              "utility": 0.5184,
+              "value": 3.186,
+              "on_time": true
+            },
+            {
+              "slot": 5,
+              "bidder_id": "b4",
+              "ctr": 0.37,
+              "bid": 2.128,
+              "payment": 0.0185,
+              "utility": 1.1463,
+              "value": 3.148,
+              "on_time": true
+            }
+          ]
+        },
+        "VCG": {
+          "top_round_metrics": {
+            "revenue": 3.7106,
+            "social_welfare": 9.2241,
+            "efficiency": 0.9351,
+            "payoff_mean": 1.1027,
+            "payoff_std": 0.2433,
+            "utility_gini": 0.1086,
+            "on_time_rate": 1.0,
+            "late_bid_rate": 0.0,
+            "truthful_gap": 0.1887,
+            "winner_count": 5,
+            "collusion_discount": 0.0
+          },
+          "top_round_allocations": [
+            {
+              "slot": 1,
+              "bidder_id": "b11",
+              "ctr": 1.0,
+              "bid": 3.368,
+              "payment": 1.5991,
+              "utility": 1.5689,
+              "value": 3.168,
+              "on_time": true
+            },
+            {
+              "slot": 2,
+              "bidder_id": "b14",
+              "ctr": 0.82,
+              "bid": 2.642,
+              "payment": 1.1236,
+              "utility": 0.9863,
+              "value": 2.573,
+              "on_time": true
+            },
+            {
+              "slot": 3,
+              "bidder_id": "b1",
+              "ctr": 0.64,
+              "bid": 2.506,
+              "payment": 0.6725,
+              "utility": 0.8769,
+              "value": 2.421,
+              "on_time": true
+            },
+            {
+              "slot": 4,
+              "bidder_id": "b17",
+              "ctr": 0.49,
+              "bid": 2.504,
+              "payment": 0.2969,
+              "utility": 1.0972,
+              "value": 2.845,
+              "on_time": true
+            },
+            {
+              "slot": 5,
+              "bidder_id": "b4",
+              "ctr": 0.37,
+              "bid": 2.32,
+              "payment": 0.0185,
+              "utility": 0.9842,
+              "value": 2.71,
+              "on_time": true
+            }
+          ]
+        }
+      }
+    },
+    "sweep": [
+      {
+        "scenario": "collusion",
+        "rounds": 300,
+        "num_bidders": 20,
+        "num_slots": 5,
+        "value_range": {
+          "min": 0.35,
+          "max": 3.2
+        },
+        "bid_deadline_ms": 120,
+        "latency_scale_ms": 58,
+        "type_mix": {
+          "truthful": 0.25,
+          "shaded": 0.25,
+          "budget": 0.25,
+          "aggressive": 0.25
+        },
+        "type_counts": null,
+        "collusion_rate": 0.1,
+        "summary": {
+          "GSP": {
+            "revenue": 6.6788,
+            "social_welfare": 8.7652,
+            "efficiency": 0.9214,
+            "payoff_mean": 0.4173,
+            "payoff_std": 0.3107,
+            "utility_gini": 0.4071,
+            "truthful_gap": 0.2427,
+            "late_bid_rate": 0.0072,
+            "collusion_discount": 0.7344,
+            "payoff_by_type": {
+              "truthful": {
+                "mean_payoff": 0.1025,
+                "win_rate": 0.3029,
+                "mean_bid": 1.4641
+              },
+              "aggressive": {
+                "mean_payoff": 0.102,
+                "win_rate": 0.3512,
+                "mean_bid": 1.5846
+              },
+              "shaded": {
+                "mean_payoff": 0.1002,
+                "win_rate": 0.1588,
+                "mean_bid": 1.1762
+              },
+              "budget": {
+                "mean_payoff": 0.1123,
+                "win_rate": 0.1882,
+                "mean_bid": 1.2673
+              }
+            }
+          },
+          "VCG": {
+            "revenue": 3.2202,
+            "social_welfare": 8.6909,
+            "efficiency": 0.9203,
+            "payoff_mean": 1.0941,
+            "payoff_std": 0.2673,
+            "utility_gini": 0.1309,
+            "truthful_gap": 0.2432,
+            "late_bid_rate": 0.0092,
+            "collusion_discount": 0.7431,
+            "payoff_by_type": {
+              "aggressive": {
+                "mean_payoff": 0.3728,
+                "win_rate": 0.3548,
+                "mean_bid": 1.6181
+              },
+              "shaded": {
+                "mean_payoff": 0.1746,
+                "win_rate": 0.1506,
+                "mean_bid": 1.1787
+              },
+              "truthful": {
+                "mean_payoff": 0.3179,
+                "win_rate": 0.2932,
+                "mean_bid": 1.4425
+              },
+              "budget": {
+                "mean_payoff": 0.2239,
+                "win_rate": 0.1966,
+                "mean_bid": 1.2736
+              }
+            }
+          }
+        },
+        "comparisons": {
+          "vcg_minus_gsp_welfare": -0.0743,
+          "vcg_minus_gsp_efficiency": -0.0011,
+          "vcg_minus_gsp_payoff_std": -0.0434,
+          "vcg_revenue_loss_vs_gsp": 3.4586,
+          "vcg_revenue_loss_pct_vs_gsp": 51.78
+        },
+        "samples": {
+          "GSP": {
+            "top_round_metrics": {
+              "revenue": 6.6173,
+              "social_welfare": 8.7327,
+              "efficiency": 0.8892,
+              "payoff_mean": 0.4231,
+              "payoff_std": 0.4331,
+              "utility_gini": 0.5048,
+              "on_time_rate": 1.0,
+              "late_bid_rate": 0.0,
+              "truthful_gap": 0.3389,
+              "winner_count": 5,
+              "collusion_discount": 0.396
+            },
+            "top_round_allocations": [
+              {
+                "slot": 1,
+                "bidder_id": "b7",
+                "ctr": 1.0,
+                "bid": 2.485,
+                "payment": 2.397,
+                "utility": 0.492,
+                "value": 2.889,
+                "on_time": true
+              },
+              {
+                "slot": 2,
+                "bidder_id": "b9",
+                "ctr": 0.82,
+                "bid": 2.397,
+                "payment": 1.7786,
+                "utility": 0.0394,
+                "value": 2.217,
+                "on_time": true
+              },
+              {
+                "slot": 3,
+                "bidder_id": "b14",
+                "ctr": 0.64,
+                "bid": 2.169,
+                "payment": 1.3805,
+                "utility": -0.0806,
+                "value": 2.031,
+                "on_time": true
+              },
+              {
+                "slot": 4,
+                "bidder_id": "b20",
+                "ctr": 0.49,
+                "bid": 2.157,
+                "payment": 1.0427,
+                "utility": 0.5184,
+                "value": 3.186,
+                "on_time": true
+              },
+              {
+                "slot": 5,
+                "bidder_id": "b4",
+                "ctr": 0.37,
+                "bid": 2.128,
+                "payment": 0.0185,
+                "utility": 1.1463,
+                "value": 3.148,
+                "on_time": true
+              }
+            ]
+          },
+          "VCG": {
+            "top_round_metrics": {
+              "revenue": 3.5335,
+              "social_welfare": 9.2241,
+              "efficiency": 0.9351,
+              "payoff_mean": 1.1381,
+              "payoff_std": 0.2482,
+              "utility_gini": 0.1083,
+              "on_time_rate": 1.0,
+              "late_bid_rate": 0.0,
+              "truthful_gap": 0.25,
+              "winner_count": 5,
+              "collusion_discount": 0.8085
+            },
+            "top_round_allocations": [
+              {
+                "slot": 1,
+                "bidder_id": "b11",
+                "ctr": 1.0,
+                "bid": 3.368,
+                "payment": 1.5549,
+                "utility": 1.6131,
+                "value": 3.168,
+                "on_time": true
+              },
+              {
+                "slot": 2,
+                "bidder_id": "b14",
+                "ctr": 0.82,
+                "bid": 2.642,
+                "payment": 1.0793,
+                "utility": 1.0306,
+                "value": 2.573,
+                "on_time": true
+              },
+              {
+                "slot": 3,
+                "bidder_id": "b1",
+                "ctr": 0.64,
+                "bid": 2.506,
+                "payment": 0.6282,
+                "utility": 0.9212,
+                "value": 2.421,
+                "on_time": true
+              },
+              {
+                "slot": 4,
+                "bidder_id": "b17",
+                "ctr": 0.49,
+                "bid": 2.504,
+                "payment": 0.2526,
+                "utility": 1.1414,
+                "value": 2.845,
+                "on_time": true
+              },
+              {
+                "slot": 5,
+                "bidder_id": "b4",
+                "ctr": 0.37,
+                "bid": 1.951,
+                "payment": 0.0185,
+                "utility": 0.9842,
+                "value": 2.71,
+                "on_time": true
+              }
+            ]
+          }
+        }
+      },
+      {
+        "scenario": "collusion",
+        "rounds": 300,
+        "num_bidders": 20,
+        "num_slots": 5,
+        "value_range": {
+          "min": 0.35,
+          "max": 3.2
+        },
+        "bid_deadline_ms": 120,
+        "latency_scale_ms": 58,
+        "type_mix": {
+          "truthful": 0.25,
+          "shaded": 0.25,
+          "budget": 0.25,
+          "aggressive": 0.25
+        },
+        "type_counts": null,
+        "collusion_rate": 0.2,
+        "summary": {
+          "GSP": {
+            "revenue": 6.5371,
+            "social_welfare": 8.7506,
+            "efficiency": 0.92,
+            "payoff_mean": 0.4427,
+            "payoff_std": 0.3051,
+            "utility_gini": 0.3816,
+            "truthful_gap": 0.3654,
+            "late_bid_rate": 0.0072,
+            "collusion_discount": 1.067,
+            "payoff_by_type": {
+              "truthful": {
+                "mean_payoff": 0.1101,
+                "win_rate": 0.3036,
+                "mean_bid": 1.3275
+              },
+              "aggressive": {
+                "mean_payoff": 0.1077,
+                "win_rate": 0.3356,
+                "mean_bid": 1.4078
+              },
+              "shaded": {
+                "mean_payoff": 0.1062,
+                "win_rate": 0.1662,
+                "mean_bid": 1.0868
+              },
+              "budget": {
+                "mean_payoff": 0.1185,
+                "win_rate": 0.1954,
+                "mean_bid": 1.1542
+              }
+            }
+          },
+          "VCG": {
+            "revenue": 3.163,
+            "social_welfare": 8.6972,
+            "efficiency": 0.9209,
+            "payoff_mean": 1.1068,
+            "payoff_std": 0.274,
+            "utility_gini": 0.133,
+            "truthful_gap": 0.3612,
+            "late_bid_rate": 0.0092,
+            "collusion_discount": 1.0512,
+            "payoff_by_type": {
+              "aggressive": {
+                "mean_payoff": 0.3633,
+                "win_rate": 0.3415,
+                "mean_bid": 1.4563
+              },
+              "shaded": {
+                "mean_payoff": 0.1918,
+                "win_rate": 0.1653,
+                "mean_bid": 1.0735
+              },
+              "truthful": {
+                "mean_payoff": 0.3128,
+                "win_rate": 0.2853,
+                "mean_bid": 1.3234
+              },
+              "budget": {
+                "mean_payoff": 0.2347,
+                "win_rate": 0.2038,
+                "mean_bid": 1.1613
+              }
+            }
+          }
+        },
+        "comparisons": {
+          "vcg_minus_gsp_welfare": -0.0534,
+          "vcg_minus_gsp_efficiency": 0.0009,
+          "vcg_minus_gsp_payoff_std": -0.0311,
+          "vcg_revenue_loss_vs_gsp": 3.3741,
+          "vcg_revenue_loss_pct_vs_gsp": 51.61
+        },
+        "samples": {
+          "GSP": {
+            "top_round_metrics": {
+              "revenue": 6.459,
+              "social_welfare": 9.1669,
+              "efficiency": 0.9334,
+              "payoff_mean": 0.5416,
+              "payoff_std": 0.2729,
+              "utility_gini": 0.2668,
+              "on_time_rate": 1.0,
+              "late_bid_rate": 0.0,
+              "truthful_gap": 0.4597,
+              "winner_count": 5,
+              "collusion_discount": 1.0815
+            },
+            "top_round_allocations": [
+              {
+                "slot": 1,
+                "bidder_id": "b7",
+                "ctr": 1.0,
+                "bid": 2.485,
+                "payment": 2.397,
+                "utility": 0.492,
+                "value": 2.889,
+                "on_time": true
+              },
+              {
+                "slot": 2,
+                "bidder_id": "b9",
+                "ctr": 0.82,
+                "bid": 2.397,
+                "payment": 1.7687,
+                "utility": 0.0492,
+                "value": 2.217,
+                "on_time": true
+              },
+              {
+                "slot": 3,
+                "bidder_id": "b20",
+                "ctr": 0.64,
+                "bid": 2.157,
+                "payment": 1.3619,
+                "utility": 0.6771,
+                "value": 3.186,
+                "on_time": true
+              },
+              {
+                "slot": 4,
+                "bidder_id": "b4",
+                "ctr": 0.49,
+                "bid": 2.128,
+                "payment": 0.9129,
+                "utility": 0.6297,
+                "value": 3.148,
+                "on_time": true
+              },
+              {
+                "slot": 5,
+                "bidder_id": "b16",
+                "ctr": 0.37,
+                "bid": 1.863,
+                "payment": 0.0185,
+                "utility": 0.8599,
+                "value": 2.374,
+                "on_time": true
+              }
+            ]
+          },
+          "VCG": {
+            "top_round_metrics": {
+              "revenue": 3.5335,
+              "social_welfare": 9.2241,
+              "efficiency": 0.9351,
+              "payoff_mean": 1.1381,
+              "payoff_std": 0.2482,
+              "utility_gini": 0.1083,
+              "on_time_rate": 1.0,
+              "late_bid_rate": 0.0,
+              "truthful_gap": 0.3821,
+              "winner_count": 5,
+              "collusion_discount": 1.291
+            },
+            "top_round_allocations": [
+              {
+                "slot": 1,
+                "bidder_id": "b11",
+                "ctr": 1.0,
+                "bid": 3.368,
+                "payment": 1.5549,
+                "utility": 1.6131,
+                "value": 3.168,
+                "on_time": true
+              },
+              {
+                "slot": 2,
+                "bidder_id": "b14",
+                "ctr": 0.82,
+                "bid": 2.642,
+                "payment": 1.0793,
+                "utility": 1.0306,
+                "value": 2.573,
+                "on_time": true
+              },
+              {
+                "slot": 3,
+                "bidder_id": "b1",
+                "ctr": 0.64,
+                "bid": 2.506,
+                "payment": 0.6282,
+                "utility": 0.9212,
+                "value": 2.421,
+                "on_time": true
+              },
+              {
+                "slot": 4,
+                "bidder_id": "b17",
+                "ctr": 0.49,
+                "bid": 2.504,
+                "payment": 0.2526,
+                "utility": 1.1414,
+                "value": 2.845,
+                "on_time": true
+              },
+              {
+                "slot": 5,
+                "bidder_id": "b4",
+                "ctr": 0.37,
+                "bid": 1.951,
+                "payment": 0.0185,
+                "utility": 0.9842,
+                "value": 2.71,
+                "on_time": true
+              }
+            ]
+          }
+        }
+      },
+      {
+        "scenario": "collusion",
+        "rounds": 300,
+        "num_bidders": 20,
+        "num_slots": 5,
+        "value_range": {
+          "min": 0.35,
+          "max": 3.2
+        },
+        "bid_deadline_ms": 120,
+        "latency_scale_ms": 58,
+        "type_mix": {
+          "truthful": 0.25,
+          "shaded": 0.25,
+          "budget": 0.25,
+          "aggressive": 0.25
+        },
+        "type_counts": null,
+        "collusion_rate": 0.3,
+        "summary": {
+          "GSP": {
+            "revenue": 6.3506,
+            "social_welfare": 8.7014,
+            "efficiency": 0.9147,
+            "payoff_mean": 0.4702,
+            "payoff_std": 0.3025,
+            "utility_gini": 0.3584,
+            "truthful_gap": 0.4925,
+            "late_bid_rate": 0.0072,
+            "collusion_discount": 1.1967,
+            "payoff_by_type": {
+              "truthful": {
+                "mean_payoff": 0.1178,
+                "win_rate": 0.297,
+                "mean_bid": 1.1826
+              },
+              "aggressive": {
+                "mean_payoff": 0.1076,
+                "win_rate": 0.316,
+                "mean_bid": 1.2459
+              },
+              "shaded": {
+                "mean_payoff": 0.1146,
+                "win_rate": 0.1757,
+                "mean_bid": 0.9885
+              },
+              "budget": {
+                "mean_payoff": 0.1297,
+                "win_rate": 0.2118,
+                "mean_bid": 1.0244
+              }
+            }
+          },
+          "VCG": {
+            "revenue": 3.0794,
+            "social_welfare": 8.6698,
+            "efficiency": 0.9182,
+            "payoff_mean": 1.1181,
+            "payoff_std": 0.2944,
+            "utility_gini": 0.1419,
+            "truthful_gap": 0.4883,
+            "late_bid_rate": 0.0092,
+            "collusion_discount": 1.1862,
+            "payoff_by_type": {
+              "aggressive": {
+                "mean_payoff": 0.3487,
+                "win_rate": 0.3256,
+                "mean_bid": 1.283
+              },
+              "shaded": {
+                "mean_payoff": 0.2151,
+                "win_rate": 0.1835,
+                "mean_bid": 0.9766
+              },
+              "truthful": {
+                "mean_payoff": 0.3037,
+                "win_rate": 0.2729,
+                "mean_bid": 1.1713
+              },
+              "budget": {
+                "mean_payoff": 0.2474,
+                "win_rate": 0.2148,
+                "mean_bid": 1.0489
+              }
+            }
+          }
+        },
+        "comparisons": {
+          "vcg_minus_gsp_welfare": -0.0316,
+          "vcg_minus_gsp_efficiency": 0.0035,
+          "vcg_minus_gsp_payoff_std": -0.0081,
+          "vcg_revenue_loss_vs_gsp": 3.2712,
+          "vcg_revenue_loss_pct_vs_gsp": 51.51
+        },
+        "samples": {
+          "GSP": {
+            "top_round_metrics": {
+              "revenue": 6.459,
+              "social_welfare": 9.1669,
+              "efficiency": 0.9334,
+              "payoff_mean": 0.5416,
+              "payoff_std": 0.2729,
+              "utility_gini": 0.2668,
+              "on_time_rate": 1.0,
+              "late_bid_rate": 0.0,
+              "truthful_gap": 0.5967,
+              "winner_count": 5,
+              "collusion_discount": 1.3548
+            },
+            "top_round_allocations": [
+              {
+                "slot": 1,
+                "bidder_id": "b7",
+                "ctr": 1.0,
+                "bid": 2.485,
+                "payment": 2.397,
+                "utility": 0.492,
+                "value": 2.889,
+                "on_time": true
+              },
+              {
+                "slot": 2,
+                "bidder_id": "b9",
+                "ctr": 0.82,
+                "bid": 2.397,
+                "payment": 1.7687,
+                "utility": 0.0492,
+                "value": 2.217,
+                "on_time": true
+              },
+              {
+                "slot": 3,
+                "bidder_id": "b20",
+                "ctr": 0.64,
+                "bid": 2.157,
+                "payment": 1.3619,
+                "utility": 0.6771,
+                "value": 3.186,
+                "on_time": true
+              },
+              {
+                "slot": 4,
+                "bidder_id": "b4",
+                "ctr": 0.49,
+                "bid": 2.128,
+                "payment": 0.9129,
+                "utility": 0.6297,
+                "value": 3.148,
+                "on_time": true
+              },
+              {
+                "slot": 5,
+                "bidder_id": "b16",
+                "ctr": 0.37,
+                "bid": 1.863,
+                "payment": 0.0185,
+                "utility": 0.8599,
+                "value": 2.374,
+                "on_time": true
+              }
+            ]
+          },
+          "VCG": {
+            "top_round_metrics": {
+              "revenue": 3.5335,
+              "social_welfare": 9.2241,
+              "efficiency": 0.9351,
+              "payoff_mean": 1.1381,
+              "payoff_std": 0.2482,
+              "utility_gini": 0.1083,
+              "on_time_rate": 1.0,
+              "late_bid_rate": 0.0,
+              "truthful_gap": 0.5356,
+              "winner_count": 5,
+              "collusion_discount": 1.4012
+            },
+            "top_round_allocations": [
+              {
+                "slot": 1,
+                "bidder_id": "b11",
+                "ctr": 1.0,
+                "bid": 3.368,
+                "payment": 1.5549,
+                "utility": 1.6131,
+                "value": 3.168,
+                "on_time": true
+              },
+              {
+                "slot": 2,
+                "bidder_id": "b14",
+                "ctr": 0.82,
+                "bid": 2.642,
+                "payment": 1.0793,
+                "utility": 1.0306,
+                "value": 2.573,
+                "on_time": true
+              },
+              {
+                "slot": 3,
+                "bidder_id": "b1",
+                "ctr": 0.64,
+                "bid": 2.506,
+                "payment": 0.6282,
+                "utility": 0.9212,
+                "value": 2.421,
+                "on_time": true
+              },
+              {
+                "slot": 4,
+                "bidder_id": "b17",
+                "ctr": 0.49,
+                "bid": 2.504,
+                "payment": 0.2526,
+                "utility": 1.1414,
+                "value": 2.845,
+                "on_time": true
+              },
+              {
+                "slot": 5,
+                "bidder_id": "b4",
+                "ctr": 0.37,
+                "bid": 1.951,
+                "payment": 0.0185,
+                "utility": 0.9842,
+                "value": 2.71,
+                "on_time": true
+              }
+            ]
+          }
+        }
+      },
+      {
+        "scenario": "collusion",
+        "rounds": 300,
+        "num_bidders": 20,
+        "num_slots": 5,
+        "value_range": {
+          "min": 0.35,
+          "max": 3.2
+        },
+        "bid_deadline_ms": 120,
+        "latency_scale_ms": 58,
+        "type_mix": {
+          "truthful": 0.25,
+          "shaded": 0.25,
+          "budget": 0.25,
+          "aggressive": 0.25
+        },
+        "type_counts": null,
+        "collusion_rate": 0.4,
+        "summary": {
+          "GSP": {
+            "revenue": 6.1242,
+            "social_welfare": 8.595,
+            "efficiency": 0.9035,
+            "payoff_mean": 0.4942,
+            "payoff_std": 0.3035,
+            "utility_gini": 0.3408,
+            "truthful_gap": 0.6284,
+            "late_bid_rate": 0.0072,
+            "collusion_discount": 1.2837,
+            "payoff_by_type": {
+              "truthful": {
+                "mean_payoff": 0.1241,
+                "win_rate": 0.2784,
+                "mean_bid": 1.0081
+              },
+              "aggressive": {
+                "mean_payoff": 0.111,
+                "win_rate": 0.3133,
+                "mean_bid": 1.1077
+              },
+              "shaded": {
+                "mean_payoff": 0.1237,
+                "win_rate": 0.1878,
+                "mean_bid": 0.8661
+              },
+              "budget": {
+                "mean_payoff": 0.1349,
+                "win_rate": 0.2209,
+                "mean_bid": 0.8954
+              }
+            }
+          },
+          "VCG": {
+            "revenue": 2.9708,
+            "social_welfare": 8.6252,
+            "efficiency": 0.9134,
+            "payoff_mean": 1.1309,
+            "payoff_std": 0.3169,
+            "utility_gini": 0.1516,
+            "truthful_gap": 0.6182,
+            "late_bid_rate": 0.0092,
+            "collusion_discount": 1.2551,
+            "payoff_by_type": {
+              "aggressive": {
+                "mean_payoff": 0.34,
+                "win_rate": 0.3143,
+                "mean_bid": 1.1263
+              },
+              "shaded": {
+                "mean_payoff": 0.235,
+                "win_rate": 0.1989,
+                "mean_bid": 0.873
+              },
+              "truthful": {
+                "mean_payoff": 0.297,
+                "win_rate": 0.2637,
+                "mean_bid": 1.0138
+              },
+              "budget": {
+                "mean_payoff": 0.2567,
+                "win_rate": 0.2207,
+                "mean_bid": 0.9242
+              }
+            }
+          }
+        },
+        "comparisons": {
+          "vcg_minus_gsp_welfare": 0.0302,
+          "vcg_minus_gsp_efficiency": 0.0099,
+          "vcg_minus_gsp_payoff_std": 0.0134,
+          "vcg_revenue_loss_vs_gsp": 3.1534,
+          "vcg_revenue_loss_pct_vs_gsp": 51.49
+        },
+        "samples": {
+          "GSP": {
+            "top_round_metrics": {
+              "revenue": 6.459,
+              "social_welfare": 9.1669,
+              "efficiency": 0.9334,
+              "payoff_mean": 0.5416,
+              "payoff_std": 0.2729,
+              "utility_gini": 0.2668,
+              "on_time_rate": 1.0,
+              "late_bid_rate": 0.0,
+              "truthful_gap": 0.6432,
+              "winner_count": 5,
+              "collusion_discount": 1.1325
+            },
+            "top_round_allocations": [
+              {
+                "slot": 1,
+                "bidder_id": "b7",
+                "ctr": 1.0,
+                "bid": 2.485,
+                "payment": 2.397,
+                "utility": 0.492,
+                "value": 2.889,
+                "on_time": true
+              },
+              {
+                "slot": 2,
+                "bidder_id": "b9",
+                "ctr": 0.82,
+                "bid": 2.397,
+                "payment": 1.7687,
+                "utility": 0.0492,
+                "value": 2.217,
+                "on_time": true
+              },
+              {
+                "slot": 3,
+                "bidder_id": "b20",
+                "ctr": 0.64,
+                "bid": 2.157,
+                "payment": 1.3619,
+                "utility": 0.6771,
+                "value": 3.186,
+                "on_time": true
+              },
+              {
+                "slot": 4,
+                "bidder_id": "b4",
+                "ctr": 0.49,
+                "bid": 2.128,
+                "payment": 0.9129,
+                "utility": 0.6297,
+                "value": 3.148,
+                "on_time": true
+              },
+              {
+                "slot": 5,
+                "bidder_id": "b16",
+                "ctr": 0.37,
+                "bid": 1.863,
+                "payment": 0.0185,
+                "utility": 0.8599,
+                "value": 2.374,
+                "on_time": true
+              }
+            ]
+          },
+          "VCG": {
+            "top_round_metrics": {
+              "revenue": 3.5335,
+              "social_welfare": 9.2241,
+              "efficiency": 0.9351,
+              "payoff_mean": 1.1381,
+              "payoff_std": 0.2482,
+              "utility_gini": 0.1083,
+              "on_time_rate": 1.0,
+              "late_bid_rate": 0.0,
+              "truthful_gap": 0.5675,
+              "winner_count": 5,
+              "collusion_discount": 1.1811
+            },
+            "top_round_allocations": [
+              {
+                "slot": 1,
+                "bidder_id": "b11",
+                "ctr": 1.0,
+                "bid": 3.368,
+                "payment": 1.5549,
+                "utility": 1.6131,
+                "value": 3.168,
+                "on_time": true
+              },
+              {
+                "slot": 2,
+                "bidder_id": "b14",
+                "ctr": 0.82,
+                "bid": 2.642,
+                "payment": 1.0793,
+                "utility": 1.0306,
+                "value": 2.573,
+                "on_time": true
+              },
+              {
+                "slot": 3,
+                "bidder_id": "b1",
+                "ctr": 0.64,
+                "bid": 2.506,
+                "payment": 0.6282,
+                "utility": 0.9212,
+                "value": 2.421,
+                "on_time": true
+              },
+              {
+                "slot": 4,
+                "bidder_id": "b17",
+                "ctr": 0.49,
+                "bid": 2.504,
+                "payment": 0.2526,
+                "utility": 1.1414,
+                "value": 2.845,
+                "on_time": true
+              },
+              {
+                "slot": 5,
+                "bidder_id": "b4",
+                "ctr": 0.37,
+                "bid": 1.951,
+                "payment": 0.0185,
+                "utility": 0.9842,
+                "value": 2.71,
+                "on_time": true
+              }
+            ]
+          }
+        }
+      },
+      {
+        "scenario": "collusion",
+        "rounds": 300,
+        "num_bidders": 20,
+        "num_slots": 5,
+        "value_range": {
+          "min": 0.35,
+          "max": 3.2
+        },
+        "bid_deadline_ms": 120,
+        "latency_scale_ms": 58,
+        "type_mix": {
+          "truthful": 0.25,
+          "shaded": 0.25,
+          "budget": 0.25,
+          "aggressive": 0.25
+        },
+        "type_counts": null,
+        "collusion_rate": 0.5,
+        "summary": {
+          "GSP": {
+            "revenue": 5.8925,
+            "social_welfare": 8.4824,
+            "efficiency": 0.8919,
+            "payoff_mean": 0.518,
+            "payoff_std": 0.3091,
+            "utility_gini": 0.3319,
+            "truthful_gap": 0.7532,
+            "late_bid_rate": 0.0072,
+            "collusion_discount": 1.3122,
+            "payoff_by_type": {
+              "truthful": {
+                "mean_payoff": 0.1237,
+                "win_rate": 0.2632,
+                "mean_bid": 0.8506
+              },
+              "aggressive": {
+                "mean_payoff": 0.1118,
+                "win_rate": 0.3004,
+                "mean_bid": 0.9687
+              },
+              "shaded": {
+                "mean_payoff": 0.1348,
+                "win_rate": 0.2014,
+                "mean_bid": 0.7532
+              },
+              "budget": {
+                "mean_payoff": 0.1471,
+                "win_rate": 0.2353,
+                "mean_bid": 0.7815
+              }
+            }
+          },
+          "VCG": {
+            "revenue": 2.8226,
+            "social_welfare": 8.5278,
+            "efficiency": 0.903,
+            "payoff_mean": 1.141,
+            "payoff_std": 0.3515,
+            "utility_gini": 0.1668,
+            "truthful_gap": 0.7513,
+            "late_bid_rate": 0.0092,
+            "collusion_discount": 1.3051,
+            "payoff_by_type": {
+              "aggressive": {
+                "mean_payoff": 0.3222,
+                "win_rate": 0.2958,
+                "mean_bid": 0.9661
+              },
+              "shaded": {
+                "mean_payoff": 0.265,
+                "win_rate": 0.2199,
+                "mean_bid": 0.7703
+              },
+              "truthful": {
+                "mean_payoff": 0.2787,
+                "win_rate": 0.2474,
+                "mean_bid": 0.8483
+              },
+              "budget": {
+                "mean_payoff": 0.2743,
+                "win_rate": 0.2357,
+                "mean_bid": 0.7955
+              }
+            }
+          }
+        },
+        "comparisons": {
+          "vcg_minus_gsp_welfare": 0.0454,
+          "vcg_minus_gsp_efficiency": 0.0111,
+          "vcg_minus_gsp_payoff_std": 0.0424,
+          "vcg_revenue_loss_vs_gsp": 3.0699,
+          "vcg_revenue_loss_pct_vs_gsp": 52.1
+        },
+        "samples": {
+          "GSP": {
+            "top_round_metrics": {
+              "revenue": 6.459,
+              "social_welfare": 9.1669,
+              "efficiency": 0.9334,
+              "payoff_mean": 0.5416,
+              "payoff_std": 0.2729,
+              "utility_gini": 0.2668,
+              "on_time_rate": 1.0,
+              "late_bid_rate": 0.0,
+              "truthful_gap": 0.8095,
+              "winner_count": 5,
+              "collusion_discount": 1.2385
+            },
+            "top_round_allocations": [
+              {
+                "slot": 1,
+                "bidder_id": "b7",
+                "ctr": 1.0,
+                "bid": 2.485,
+                "payment": 2.397,
+                "utility": 0.492,
+                "value": 2.889,
+                "on_time": true
+              },
+              {
+                "slot": 2,
+                "bidder_id": "b9",
+                "ctr": 0.82,
+                "bid": 2.397,
+                "payment": 1.7687,
+                "utility": 0.0492,
+                "value": 2.217,
+                "on_time": true
+              },
+              {
+                "slot": 3,
+                "bidder_id": "b20",
+                "ctr": 0.64,
+                "bid": 2.157,
+                "payment": 1.3619,
+                "utility": 0.6771,
+                "value": 3.186,
+                "on_time": true
+              },
+              {
+                "slot": 4,
+                "bidder_id": "b4",
+                "ctr": 0.49,
+                "bid": 2.128,
+                "payment": 0.9129,
+                "utility": 0.6297,
+                "value": 3.148,
+                "on_time": true
+              },
+              {
+                "slot": 5,
+                "bidder_id": "b16",
+                "ctr": 0.37,
+                "bid": 1.863,
+                "payment": 0.0185,
+                "utility": 0.8599,
+                "value": 2.374,
+                "on_time": true
+              }
+            ]
+          },
+          "VCG": {
+            "top_round_metrics": {
+              "revenue": 3.5335,
+              "social_welfare": 9.2241,
+              "efficiency": 0.9351,
+              "payoff_mean": 1.1381,
+              "payoff_std": 0.2482,
+              "utility_gini": 0.1083,
+              "on_time_rate": 1.0,
+              "late_bid_rate": 0.0,
+              "truthful_gap": 0.6568,
+              "winner_count": 5,
+              "collusion_discount": 1.155
+            },
+            "top_round_allocations": [
+              {
+                "slot": 1,
+                "bidder_id": "b11",
+                "ctr": 1.0,
+                "bid": 3.368,
+                "payment": 1.5549,
+                "utility": 1.6131,
+                "value": 3.168,
+                "on_time": true
+              },
+              {
+                "slot": 2,
+                "bidder_id": "b14",
+                "ctr": 0.82,
+                "bid": 2.642,
+                "payment": 1.0793,
+                "utility": 1.0306,
+                "value": 2.573,
+                "on_time": true
+              },
+              {
+                "slot": 3,
+                "bidder_id": "b1",
+                "ctr": 0.64,
+                "bid": 2.506,
+                "payment": 0.6282,
+                "utility": 0.9212,
+                "value": 2.421,
+                "on_time": true
+              },
+              {
+                "slot": 4,
+                "bidder_id": "b17",
+                "ctr": 0.49,
+                "bid": 2.504,
+                "payment": 0.2526,
+                "utility": 1.1414,
+                "value": 2.845,
+                "on_time": true
+              },
+              {
+                "slot": 5,
+                "bidder_id": "b4",
+                "ctr": 0.37,
+                "bid": 1.951,
+                "payment": 0.0185,
+                "utility": 0.9842,
+                "value": 2.71,
+                "on_time": true
+              }
+            ]
+          }
+        }
+      },
+      {
+        "scenario": "collusion",
+        "rounds": 300,
+        "num_bidders": 20,
+        "num_slots": 5,
+        "value_range": {
+          "min": 0.35,
+          "max": 3.2
+        },
+        "bid_deadline_ms": 120,
+        "latency_scale_ms": 58,
+        "type_mix": {
+          "truthful": 0.25,
+          "shaded": 0.25,
+          "budget": 0.25,
+          "aggressive": 0.25
+        },
+        "type_counts": null,
+        "collusion_rate": 0.6,
+        "summary": {
+          "GSP": {
+            "revenue": 5.5791,
+            "social_welfare": 8.3383,
+            "efficiency": 0.8767,
+            "payoff_mean": 0.5518,
+            "payoff_std": 0.3179,
+            "utility_gini": 0.3188,
+            "truthful_gap": 0.8838,
+            "late_bid_rate": 0.0072,
+            "collusion_discount": 1.3433,
+            "payoff_by_type": {
+              "truthful": {
+                "mean_payoff": 0.124,
+                "win_rate": 0.2586,
+                "mean_bid": 0.72
+              },
+              "aggressive": {
+                "mean_payoff": 0.1237,
+                "win_rate": 0.2855,
+                "mean_bid": 0.8068
+              },
+              "shaded": {
+                "mean_payoff": 0.1511,
+                "win_rate": 0.2223,
+                "mean_bid": 0.6258
+              },
+              "budget": {
+                "mean_payoff": 0.1528,
+                "win_rate": 0.234,
+                "mean_bid": 0.6512
+              }
+            }
+          },
+          "VCG": {
+            "revenue": 2.6307,
+            "social_welfare": 8.3664,
+            "efficiency": 0.8859,
+            "payoff_mean": 1.1471,
+            "payoff_std": 0.4051,
+            "utility_gini": 0.1916,
+            "truthful_gap": 0.8824,
+            "late_bid_rate": 0.0092,
+            "collusion_discount": 1.3409,
+            "payoff_by_type": {
+              "aggressive": {
+                "mean_payoff": 0.3095,
+                "win_rate": 0.2825,
+                "mean_bid": 0.7955
+              },
+              "shaded": {
+                "mean_payoff": 0.2712,
+                "win_rate": 0.2227,
+                "mean_bid": 0.6375
+              },
+              "truthful": {
+                "mean_payoff": 0.2804,
+                "win_rate": 0.2467,
+                "mean_bid": 0.7201
+              },
+              "budget": {
+                "mean_payoff": 0.2854,
+                "win_rate": 0.2467,
+                "mean_bid": 0.6728
+              }
+            }
+          }
+        },
+        "comparisons": {
+          "vcg_minus_gsp_welfare": 0.0281,
+          "vcg_minus_gsp_efficiency": 0.0092,
+          "vcg_minus_gsp_payoff_std": 0.0872,
+          "vcg_revenue_loss_vs_gsp": 2.9484,
+          "vcg_revenue_loss_pct_vs_gsp": 52.85
+        },
+        "samples": {
+          "GSP": {
+            "top_round_metrics": {
+              "revenue": 5.9683,
+              "social_welfare": 8.8546,
+              "efficiency": 0.9016,
+              "payoff_mean": 0.5773,
+              "payoff_std": 0.3483,
+              "utility_gini": 0.2844,
+              "on_time_rate": 1.0,
+              "late_bid_rate": 0.0,
+              "truthful_gap": 1.0143,
+              "winner_count": 5,
+              "collusion_discount": 1.4921
+            },
+            "top_round_allocations": [
+              {
+                "slot": 1,
+                "bidder_id": "b9",
+                "ctr": 1.0,
+                "bid": 2.397,
+                "payment": 2.267,
+                "utility": -0.05,
+                "value": 2.217,
+                "on_time": true
+              },
+              {
+                "slot": 2,
+                "bidder_id": "b4",
+                "ctr": 0.82,
+                "bid": 2.267,
+                "payment": 1.7687,
+                "utility": 0.8126,
+                "value": 3.148,
+                "on_time": true
+              },
+              {
+                "slot": 3,
+                "bidder_id": "b20",
+                "ctr": 0.64,
+                "bid": 2.157,
+                "payment": 1.1923,
+                "utility": 0.8467,
+                "value": 3.186,
+                "on_time": true
+              },
+              {
+                "slot": 4,
+                "bidder_id": "b16",
+                "ctr": 0.49,
+                "bid": 1.863,
+                "payment": 0.7218,
+                "utility": 0.4415,
+                "value": 2.374,
+                "on_time": true
+              },
+              {
+                "slot": 5,
+                "bidder_id": "b3",
+                "ctr": 0.37,
+                "bid": 1.473,
+                "payment": 0.0185,
+                "utility": 0.8355,
+                "value": 2.308,
+                "on_time": true
+              }
+            ]
+          },
+          "VCG": {
+            "top_round_metrics": {
+              "revenue": 3.1987,
+              "social_welfare": 9.0746,
+              "efficiency": 0.92,
+              "payoff_mean": 1.1752,
+              "payoff_std": 0.2938,
+              "utility_gini": 0.13,
+              "on_time_rate": 1.0,
+              "late_bid_rate": 0.0,
+              "truthful_gap": 0.8347,
+              "winner_count": 5,
+              "collusion_discount": 1.2873
+            },
+            "top_round_allocations": [
+              {
+                "slot": 1,
+                "bidder_id": "b11",
+                "ctr": 1.0,
+                "bid": 3.368,
+                "payment": 1.4541,
+                "utility": 1.7139,
+                "value": 3.168,
+                "on_time": true
+              },
+              {
+                "slot": 2,
+                "bidder_id": "b14",
+                "ctr": 0.82,
+                "bid": 2.642,
+                "payment": 0.9785,
+                "utility": 1.1314,
+                "value": 2.573,
+                "on_time": true
+              },
+              {
+                "slot": 3,
+                "bidder_id": "b1",
+                "ctr": 0.64,
+                "bid": 2.506,
+                "payment": 0.5274,
+                "utility": 1.022,
+                "value": 2.421,
+                "on_time": true
+              },
+              {
+                "slot": 4,
+                "bidder_id": "b17",
+                "ctr": 0.49,
+                "bid": 2.048,
+                "payment": 0.2202,
+                "utility": 1.1738,
+                "value": 2.845,
+                "on_time": true
+              },
+              {
+                "slot": 5,
+                "bidder_id": "b16",
+                "ctr": 0.37,
+                "bid": 1.681,
+                "payment": 0.0185,
+                "utility": 0.8347,
+                "value": 2.306,
+                "on_time": true
+              }
+            ]
+          }
+        }
+      },
+      {
+        "scenario": "collusion",
+        "rounds": 300,
+        "num_bidders": 20,
+        "num_slots": 5,
+        "value_range": {
+          "min": 0.35,
+          "max": 3.2
+        },
+        "bid_deadline_ms": 120,
+        "latency_scale_ms": 58,
+        "type_mix": {
+          "truthful": 0.25,
+          "shaded": 0.25,
+          "budget": 0.25,
+          "aggressive": 0.25
+        },
+        "type_counts": null,
+        "collusion_rate": 0.7,
+        "summary": {
+          "GSP": {
+            "revenue": 5.0444,
+            "social_welfare": 8.009,
+            "efficiency": 0.842,
+            "payoff_mean": 0.5929,
+            "payoff_std": 0.3469,
+            "utility_gini": 0.3193,
+            "truthful_gap": 1.0171,
+            "late_bid_rate": 0.0072,
+            "collusion_discount": 1.3663,
+            "payoff_by_type": {
+              "truthful": {
+                "mean_payoff": 0.1329,
+                "win_rate": 0.2599,
+                "mean_bid": 0.5871
+              },
+              "aggressive": {
+                "mean_payoff": 0.1332,
+                "win_rate": 0.2618,
+                "mean_bid": 0.6169
+              },
+              "shaded": {
+                "mean_payoff": 0.1638,
+                "win_rate": 0.2351,
+                "mean_bid": 0.502
+              },
+              "budget": {
+                "mean_payoff": 0.1628,
+                "win_rate": 0.2431,
+                "mean_bid": 0.5306
+              }
+            }
+          },
+          "VCG": {
+            "revenue": 2.3604,
+            "social_welfare": 8.0532,
+            "efficiency": 0.8528,
+            "payoff_mean": 1.1386,
+            "payoff_std": 0.4866,
+            "utility_gini": 0.2314,
+            "truthful_gap": 1.0153,
+            "late_bid_rate": 0.0092,
+            "collusion_discount": 1.3686,
+            "payoff_by_type": {
+              "aggressive": {
+                "mean_payoff": 0.3006,
+                "win_rate": 0.2719,
+                "mean_bid": 0.643
+              },
+              "shaded": {
+                "mean_payoff": 0.2812,
+                "win_rate": 0.2276,
+                "mean_bid": 0.5132
+              },
+              "truthful": {
+                "mean_payoff": 0.2804,
+                "win_rate": 0.2598,
+                "mean_bid": 0.5796
+              },
+              "budget": {
+                "mean_payoff": 0.2764,
+                "win_rate": 0.2396,
+                "mean_bid": 0.5302
+              }
+            }
+          }
+        },
+        "comparisons": {
+          "vcg_minus_gsp_welfare": 0.0442,
+          "vcg_minus_gsp_efficiency": 0.0108,
+          "vcg_minus_gsp_payoff_std": 0.1397,
+          "vcg_revenue_loss_vs_gsp": 2.684,
+          "vcg_revenue_loss_pct_vs_gsp": 53.21
+        },
+        "samples": {
+          "GSP": {
+            "top_round_metrics": {
+              "revenue": 5.9683,
+              "social_welfare": 8.8546,
+              "efficiency": 0.9016,
+              "payoff_mean": 0.5773,
+              "payoff_std": 0.3483,
+              "utility_gini": 0.2844,
+              "on_time_rate": 1.0,
+              "late_bid_rate": 0.0,
+              "truthful_gap": 1.0825,
+              "winner_count": 5,
+              "collusion_discount": 1.4156
+            },
+            "top_round_allocations": [
+              {
+                "slot": 1,
+                "bidder_id": "b9",
+                "ctr": 1.0,
+                "bid": 2.397,
+                "payment": 2.267,
+                "utility": -0.05,
+                "value": 2.217,
+                "on_time": true
+              },
+              {
+                "slot": 2,
+                "bidder_id": "b4",
+                "ctr": 0.82,
+                "bid": 2.267,
+                "payment": 1.7687,
+                "utility": 0.8126,
+                "value": 3.148,
+                "on_time": true
+              },
+              {
+                "slot": 3,
+                "bidder_id": "b20",
+                "ctr": 0.64,
+                "bid": 2.157,
+                "payment": 1.1923,
+                "utility": 0.8467,
+                "value": 3.186,
+                "on_time": true
+              },
+              {
+                "slot": 4,
+                "bidder_id": "b16",
+                "ctr": 0.49,
+                "bid": 1.863,
+                "payment": 0.7218,
+                "utility": 0.4415,
+                "value": 2.374,
+                "on_time": true
+              },
+              {
+                "slot": 5,
+                "bidder_id": "b3",
+                "ctr": 0.37,
+                "bid": 1.473,
+                "payment": 0.0185,
+                "utility": 0.8355,
+                "value": 2.308,
+                "on_time": true
+              }
+            ]
+          },
+          "VCG": {
+            "top_round_metrics": {
+              "revenue": 3.1987,
+              "social_welfare": 9.0746,
+              "efficiency": 0.92,
+              "payoff_mean": 1.1752,
+              "payoff_std": 0.2938,
+              "utility_gini": 0.13,
+              "on_time_rate": 1.0,
+              "late_bid_rate": 0.0,
+              "truthful_gap": 0.8781,
+              "winner_count": 5,
+              "collusion_discount": 1.1733
+            },
+            "top_round_allocations": [
+              {
+                "slot": 1,
+                "bidder_id": "b11",
+                "ctr": 1.0,
+                "bid": 3.368,
+                "payment": 1.4541,
+                "utility": 1.7139,
+                "value": 3.168,
+                "on_time": true
+              },
+              {
+                "slot": 2,
+                "bidder_id": "b14",
+                "ctr": 0.82,
+                "bid": 2.642,
+                "payment": 0.9785,
+                "utility": 1.1314,
+                "value": 2.573,
+                "on_time": true
+              },
+              {
+                "slot": 3,
+                "bidder_id": "b1",
+                "ctr": 0.64,
+                "bid": 2.506,
+                "payment": 0.5274,
+                "utility": 1.022,
+                "value": 2.421,
+                "on_time": true
+              },
+              {
+                "slot": 4,
+                "bidder_id": "b17",
+                "ctr": 0.49,
+                "bid": 2.048,
+                "payment": 0.2202,
+                "utility": 1.1738,
+                "value": 2.845,
+                "on_time": true
+              },
+              {
+                "slot": 5,
+                "bidder_id": "b16",
+                "ctr": 0.37,
+                "bid": 1.681,
+                "payment": 0.0185,
+                "utility": 0.8347,
+                "value": 2.306,
+                "on_time": true
+              }
+            ]
+          }
+        }
+      },
+      {
+        "scenario": "collusion",
+        "rounds": 300,
+        "num_bidders": 20,
+        "num_slots": 5,
+        "value_range": {
+          "min": 0.35,
+          "max": 3.2
+        },
+        "bid_deadline_ms": 120,
+        "latency_scale_ms": 58,
+        "type_mix": {
+          "truthful": 0.25,
+          "shaded": 0.25,
+          "budget": 0.25,
+          "aggressive": 0.25
+        },
+        "type_counts": null,
+        "collusion_rate": 0.8,
+        "summary": {
+          "GSP": {
+            "revenue": 4.2618,
+            "social_welfare": 7.4438,
+            "efficiency": 0.7826,
+            "payoff_mean": 0.6364,
+            "payoff_std": 0.4212,
+            "utility_gini": 0.3567,
+            "truthful_gap": 1.1465,
+            "late_bid_rate": 0.0072,
+            "collusion_discount": 1.3795,
+            "payoff_by_type": {
+              "truthful": {
+                "mean_payoff": 0.1394,
+                "win_rate": 0.2474,
+                "mean_bid": 0.4275
+              },
+              "aggressive": {
+                "mean_payoff": 0.1448,
+                "win_rate": 0.2571,
+                "mean_bid": 0.4833
+              },
+              "shaded": {
+                "mean_payoff": 0.1747,
+                "win_rate": 0.2507,
+                "mean_bid": 0.382
+              },
+              "budget": {
+                "mean_payoff": 0.1773,
+                "win_rate": 0.2451,
+                "mean_bid": 0.4032
+              }
+            }
+          },
+          "VCG": {
+            "revenue": 1.8684,
+            "social_welfare": 7.4389,
+            "efficiency": 0.7882,
+            "payoff_mean": 1.1141,
+            "payoff_std": 0.6361,
+            "utility_gini": 0.3104,
+            "truthful_gap": 1.1484,
+            "late_bid_rate": 0.0092,
+            "collusion_discount": 1.3849,
+            "payoff_by_type": {
+              "aggressive": {
+                "mean_payoff": 0.2822,
+                "win_rate": 0.25,
+                "mean_bid": 0.4747
+              },
+              "shaded": {
+                "mean_payoff": 0.2924,
+                "win_rate": 0.2542,
+                "mean_bid": 0.3923
+              },
+              "truthful": {
+                "mean_payoff": 0.2676,
+                "win_rate": 0.2513,
+                "mean_bid": 0.4398
+              },
+              "budget": {
+                "mean_payoff": 0.2729,
+                "win_rate": 0.2448,
+                "mean_bid": 0.4006
+              }
+            }
+          }
+        },
+        "comparisons": {
+          "vcg_minus_gsp_welfare": -0.0049,
+          "vcg_minus_gsp_efficiency": 0.0056,
+          "vcg_minus_gsp_payoff_std": 0.2149,
+          "vcg_revenue_loss_vs_gsp": 2.3934,
+          "vcg_revenue_loss_pct_vs_gsp": 56.16
+        },
+        "samples": {
+          "GSP": {
+            "top_round_metrics": {
+              "revenue": 4.9706,
+              "social_welfare": 7.616,
+              "efficiency": 0.7755,
+              "payoff_mean": 0.5291,
+              "payoff_std": 0.4515,
+              "utility_gini": 0.4401,
+              "on_time_rate": 1.0,
+              "late_bid_rate": 0.0,
+              "truthful_gap": 1.2044,
+              "winner_count": 5,
+              "collusion_discount": 1.4305
+            },
+            "top_round_allocations": [
+              {
+                "slot": 1,
+                "bidder_id": "b9",
+                "ctr": 1.0,
+                "bid": 2.397,
+                "payment": 2.294,
+                "utility": -0.077,
+                "value": 2.217,
+                "on_time": true
+              },
+              {
+                "slot": 2,
+                "bidder_id": "b20",
+                "ctr": 0.82,
+                "bid": 2.294,
+                "payment": 1.5277,
+                "utility": 1.0849,
+                "value": 3.186,
+                "on_time": true
+              },
+              {
+                "slot": 3,
+                "bidder_id": "b16",
+                "ctr": 0.64,
+                "bid": 1.863,
+                "payment": 0.9427,
+                "utility": 0.5766,
+                "value": 2.374,
+                "on_time": true
+              },
+              {
+                "slot": 4,
+                "bidder_id": "b3",
+                "ctr": 0.49,
+                "bid": 1.473,
+                "payment": 0.1877,
+                "utility": 0.9432,
+                "value": 2.308,
+                "on_time": true
+              },
+              {
+                "slot": 5,
+                "bidder_id": "b2",
+                "ctr": 0.37,
+                "bid": 0.383,
+                "payment": 0.0185,
+                "utility": 0.1177,
+                "value": 0.368,
+                "on_time": true
+              }
+            ]
+          },
+          "VCG": {
+            "top_round_metrics": {
+              "revenue": 2.1876,
+              "social_welfare": 8.6438,
+              "efficiency": 0.8763,
+              "payoff_mean": 1.2912,
+              "payoff_std": 0.4148,
+              "utility_gini": 0.1761,
+              "on_time_rate": 1.0,
+              "late_bid_rate": 0.0,
+              "truthful_gap": 1.1267,
+              "winner_count": 5,
+              "collusion_discount": 1.3551
+            },
+            "top_round_allocations": [
+              {
+                "slot": 1,
+                "bidder_id": "b14",
+                "ctr": 1.0,
+                "bid": 2.642,
+                "payment": 1.0562,
+                "utility": 1.5168,
+                "value": 2.573,
+                "on_time": true
+              },
+              {
+                "slot": 2,
+                "bidder_id": "b11",
+                "ctr": 0.82,
+                "bid": 2.281,
+                "payment": 0.6456,
+                "utility": 1.9521,
+                "value": 3.168,
+                "on_time": true
+              },
+              {
+                "slot": 3,
+                "bidder_id": "b16",
+                "ctr": 0.64,
+                "bid": 1.681,
+                "payment": 0.343,
+                "utility": 1.1328,
+                "value": 2.306,
+                "on_time": true
+              },
+              {
+                "slot": 4,
+                "bidder_id": "b9",
+                "ctr": 0.49,
+                "bid": 1.458,
+                "payment": 0.1243,
+                "utility": 0.7243,
+                "value": 1.732,
+                "on_time": true
+              },
+              {
+                "slot": 5,
+                "bidder_id": "b6",
+                "ctr": 0.37,
+                "bid": 0.882,
+                "payment": 0.0185,
+                "utility": 1.13,
+                "value": 3.104,
+                "on_time": true
+              }
+            ]
+          }
+        }
+      },
+      {
+        "scenario": "collusion",
+        "rounds": 300,
+        "num_bidders": 20,
+        "num_slots": 5,
+        "value_range": {
+          "min": 0.35,
+          "max": 3.2
+        },
+        "bid_deadline_ms": 120,
+        "latency_scale_ms": 58,
+        "type_mix": {
+          "truthful": 0.25,
+          "shaded": 0.25,
+          "budget": 0.25,
+          "aggressive": 0.25
+        },
+        "type_counts": null,
+        "collusion_rate": 0.9,
+        "summary": {
+          "GSP": {
+            "revenue": 2.4823,
+            "social_welfare": 8.1046,
+            "efficiency": 0.8521,
+            "payoff_mean": 1.1244,
+            "payoff_std": 0.4527,
+            "utility_gini": 0.2225,
+            "truthful_gap": 1.2793,
+            "late_bid_rate": 0.0072,
+            "collusion_discount": 1.3944,
+            "payoff_by_type": {
+              "truthful": {
+                "mean_payoff": 0.2736,
+                "win_rate": 0.2474,
+                "mean_bid": 0.2851
+              },
+              "aggressive": {
+                "mean_payoff": 0.2785,
+                "win_rate": 0.2571,
+                "mean_bid": 0.3019
+              },
+              "shaded": {
+                "mean_payoff": 0.2926,
+                "win_rate": 0.2527,
+                "mean_bid": 0.2631
+              },
+              "budget": {
+                "mean_payoff": 0.28,
+                "win_rate": 0.2431,
+                "mean_bid": 0.2835
+              }
+            }
+          },
+          "VCG": {
+            "revenue": 0.793,
+            "social_welfare": 8.1138,
+            "efficiency": 0.8595,
+            "payoff_mean": 1.4642,
+            "payoff_std": 0.6314,
+            "utility_gini": 0.2361,
+            "truthful_gap": 1.2804,
+            "late_bid_rate": 0.0092,
+            "collusion_discount": 1.3983,
+            "payoff_by_type": {
+              "aggressive": {
+                "mean_payoff": 0.3654,
+                "win_rate": 0.244,
+                "mean_bid": 0.3248
+              },
+              "shaded": {
+                "mean_payoff": 0.3981,
+                "win_rate": 0.2668,
+                "mean_bid": 0.2874
+              },
+              "truthful": {
+                "mean_payoff": 0.3539,
+                "win_rate": 0.248,
+                "mean_bid": 0.2752
+              },
+              "budget": {
+                "mean_payoff": 0.349,
+                "win_rate": 0.2422,
+                "mean_bid": 0.2661
+              }
+            }
+          }
+        },
+        "comparisons": {
+          "vcg_minus_gsp_welfare": 0.0092,
+          "vcg_minus_gsp_efficiency": 0.0074,
+          "vcg_minus_gsp_payoff_std": 0.1787,
+          "vcg_revenue_loss_vs_gsp": 1.6893,
+          "vcg_revenue_loss_pct_vs_gsp": 68.05
+        },
+        "samples": {
+          "GSP": {
+            "top_round_metrics": {
+              "revenue": 3.5769,
+              "social_welfare": 8.9181,
+              "efficiency": 0.9081,
+              "payoff_mean": 1.0682,
+              "payoff_std": 0.5949,
+              "utility_gini": 0.2533,
+              "on_time_rate": 1.0,
+              "late_bid_rate": 0.0,
+              "truthful_gap": 1.2933,
+              "winner_count": 5,
+              "collusion_discount": 1.3806
+            },
+            "top_round_allocations": [
+              {
+                "slot": 1,
+                "bidder_id": "b9",
+                "ctr": 1.0,
+                "bid": 2.397,
+                "payment": 2.294,
+                "utility": -0.077,
+                "value": 2.217,
+                "on_time": true
+              },
+              {
+                "slot": 2,
+                "bidder_id": "b20",
+                "ctr": 0.82,
+                "bid": 2.294,
+                "payment": 1.2079,
+                "utility": 1.4047,
+                "value": 3.186,
+                "on_time": true
+              },
+              {
+                "slot": 3,
+                "bidder_id": "b3",
+                "ctr": 0.64,
+                "bid": 1.473,
+                "payment": 0.032,
+                "utility": 1.4451,
+                "value": 2.308,
+                "on_time": true
+              },
+              {
+                "slot": 4,
+                "bidder_id": "b4",
+                "ctr": 0.49,
+                "bid": 0.05,
+                "payment": 0.0245,
+                "utility": 1.518,
+                "value": 3.148,
+                "on_time": true
+              },
+              {
+                "slot": 5,
+                "bidder_id": "b7",
+                "ctr": 0.37,
+                "bid": 0.05,
+                "payment": 0.0185,
+                "utility": 1.0504,
+                "value": 2.889,
+                "on_time": true
+              }
+            ]
+          },
+          "VCG": {
+            "top_round_metrics": {
+              "revenue": 0.7591,
+              "social_welfare": 9.4422,
+              "efficiency": 0.9572,
+              "payoff_mean": 1.7367,
+              "payoff_std": 0.5709,
+              "utility_gini": 0.1827,
+              "on_time_rate": 1.0,
+              "late_bid_rate": 0.0,
+              "truthful_gap": 1.3197,
+              "winner_count": 5,
+              "collusion_discount": 1.4317
+            },
+            "top_round_allocations": [
+              {
+                "slot": 1,
+                "bidder_id": "b11",
+                "ctr": 1.0,
+                "bid": 2.281,
+                "payment": 0.4933,
+                "utility": 2.6747,
+                "value": 3.168,
+                "on_time": true
+              },
+              {
+                "slot": 2,
+                "bidder_id": "b16",
+                "ctr": 0.82,
+                "bid": 1.681,
+                "payment": 0.1908,
+                "utility": 1.7002,
+                "value": 2.306,
+                "on_time": true
+              },
+              {
+                "slot": 3,
+                "bidder_id": "b6",
+                "ctr": 0.64,
+                "bid": 0.882,
+                "payment": 0.032,
+                "utility": 1.9546,
+                "value": 3.104,
+                "on_time": true
+              },
+              {
+                "slot": 4,
+                "bidder_id": "b17",
+                "ctr": 0.49,
+                "bid": 0.05,
+                "payment": 0.0245,
+                "utility": 1.3696,
+                "value": 2.845,
+                "on_time": true
+              },
+              {
+                "slot": 5,
+                "bidder_id": "b4",
+                "ctr": 0.37,
+                "bid": 0.05,
+                "payment": 0.0185,
+                "utility": 0.9842,
+                "value": 2.71,
+                "on_time": true
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "latency": {
+    "description": "Type mix is fixed at the balanced 1:1:1:1 market and only late arrivals are added.",
+    "truthful_reference": {
+      "scenario": "heterogeneous",
+      "rounds": 300,
+      "num_bidders": 20,
+      "num_slots": 5,
+      "value_range": {
+        "min": 0.35,
+        "max": 3.2
+      },
+      "bid_deadline_ms": 120,
+      "latency_scale_ms": 58,
+      "type_mix": {
+        "truthful": 1.0,
+        "shaded": 0.0,
+        "budget": 0.0,
+        "aggressive": 0.0
+      },
+      "type_counts": null,
+      "collusion_rate": 0.3,
+      "summary": {
+        "GSP": {
+          "revenue": 7.2639,
+          "social_welfare": 8.8983,
+          "efficiency": 0.9354,
+          "payoff_mean": 0.3269,
+          "payoff_std": 0.2964,
+          "utility_gini": 0.4716,
+          "truthful_gap": 0.0,
+          "late_bid_rate": 0.0072,
+          "collusion_discount": 0.0,
+          "payoff_by_type": {
+            "truthful": {
+              "mean_payoff": 0.0817,
+              "win_rate": 0.25,
+              "mean_bid": 1.5505
+            }
+          }
+        },
+        "VCG": {
+          "revenue": 3.5263,
+          "social_welfare": 8.8643,
+          "efficiency": 0.9387,
+          "payoff_mean": 1.0676,
+          "payoff_std": 0.2294,
+          "utility_gini": 0.1142,
+          "truthful_gap": 0.0,
+          "late_bid_rate": 0.0092,
+          "collusion_discount": 0.0,
+          "payoff_by_type": {
+            "truthful": {
+              "mean_payoff": 0.2669,
+              "win_rate": 0.25,
+              "mean_bid": 1.5567
+            }
+          }
+        }
+      },
+      "comparisons": {
+        "vcg_minus_gsp_welfare": -0.034,
+        "vcg_minus_gsp_efficiency": 0.0033,
+        "vcg_minus_gsp_payoff_std": -0.067,
+        "vcg_revenue_loss_vs_gsp": 3.7376,
+        "vcg_revenue_loss_pct_vs_gsp": 51.45
+      },
+      "samples": {
+        "GSP": {
+          "top_round_metrics": {
+            "revenue": 8.065,
+            "social_welfare": 9.7607,
+            "efficiency": 0.9939,
+            "payoff_mean": 0.3391,
+            "payoff_std": 0.322,
+            "utility_gini": 0.5013,
+            "on_time_rate": 1.0,
+            "late_bid_rate": 0.0,
+            "truthful_gap": 0.0,
+            "winner_count": 5,
+            "collusion_discount": 0.0
+          },
+          "top_round_allocations": [
+            {
+              "slot": 1,
+              "bidder_id": "b4",
+              "ctr": 1.0,
+              "bid": 3.148,
+              "payment": 2.889,
+              "utility": 0.259,
+              "value": 3.148,
+              "on_time": true
+            },
+            {
+              "slot": 2,
+              "bidder_id": "b7",
+              "ctr": 0.82,
+              "bid": 2.889,
+              "payment": 2.2607,
+              "utility": 0.1082,
+              "value": 2.889,
+              "on_time": true
+            },
+            {
+              "slot": 3,
+              "bidder_id": "b20",
+              "ctr": 0.64,
+              "bid": 2.757,
+              "payment": 1.6448,
+              "utility": 0.3942,
+              "value": 3.186,
+              "on_time": true
+            },
+            {
+              "slot": 4,
+              "bidder_id": "b13",
+              "ctr": 0.49,
+              "bid": 2.57,
+              "payment": 1.252,
+              "utility": 0.0073,
+              "value": 2.57,
+              "on_time": true
+            },
+            {
+              "slot": 5,
+              "bidder_id": "b6",
+              "ctr": 0.37,
+              "bid": 2.555,
+              "payment": 0.0185,
+              "utility": 0.9269,
+              "value": 2.555,
+              "on_time": true
+            }
+          ]
+        },
+        "VCG": {
+          "top_round_metrics": {
+            "revenue": 3.9002,
+            "social_welfare": 9.3918,
+            "efficiency": 0.9521,
+            "payoff_mean": 1.0983,
+            "payoff_std": 0.2083,
+            "utility_gini": 0.1012,
+            "on_time_rate": 1.0,
+            "late_bid_rate": 0.0,
+            "truthful_gap": 0.0,
+            "winner_count": 5,
+            "collusion_discount": 0.0
+          },
+          "top_round_allocations": [
+            {
+              "slot": 1,
+              "bidder_id": "b11",
+              "ctr": 1.0,
+              "bid": 3.168,
+              "payment": 1.6949,
+              "utility": 1.4731,
+              "value": 3.168,
+              "on_time": true
+            },
+            {
+              "slot": 2,
+              "bidder_id": "b17",
+              "ctr": 0.82,
+              "bid": 2.845,
+              "payment": 1.1828,
+              "utility": 1.1501,
+              "value": 2.845,
+              "on_time": true
+            },
+            {
+              "slot": 3,
+              "bidder_id": "b4",
+              "ctr": 0.64,
+              "bid": 2.71,
+              "payment": 0.695,
+              "utility": 1.0394,
+              "value": 2.71,
+              "on_time": true
+            },
+            {
+              "slot": 4,
+              "bidder_id": "b14",
+              "ctr": 0.49,
+              "bid": 2.573,
+              "payment": 0.309,
+              "utility": 0.9517,
+              "value": 2.573,
+              "on_time": true
+            },
+            {
+              "slot": 5,
+              "bidder_id": "b1",
+              "ctr": 0.37,
+              "bid": 2.421,
+              "payment": 0.0185,
+              "utility": 0.8773,
+              "value": 2.421,
+              "on_time": true
+            }
+          ]
+        }
+      }
+    },
+    "baseline_reference": {
+      "scenario": "heterogeneous",
+      "rounds": 300,
+      "num_bidders": 20,
+      "num_slots": 5,
+      "value_range": {
+        "min": 0.35,
+        "max": 3.2
+      },
+      "bid_deadline_ms": 120,
+      "latency_scale_ms": 58,
+      "type_mix": {
+        "truthful": 0.25,
+        "shaded": 0.25,
+        "budget": 0.25,
+        "aggressive": 0.25
+      },
+      "type_counts": null,
+      "collusion_rate": 0.3,
+      "summary": {
+        "GSP": {
+          "revenue": 6.8093,
+          "social_welfare": 8.7601,
+          "efficiency": 0.9209,
+          "payoff_mean": 0.3902,
+          "payoff_std": 0.312,
+          "utility_gini": 0.4284,
+          "truthful_gap": 0.1824,
+          "late_bid_rate": 0.0072,
+          "collusion_discount": 0.0,
+          "payoff_by_type": {
+            "truthful": {
+              "mean_payoff": 0.0995,
+              "win_rate": 0.3142,
+              "mean_bid": 1.5531
+            },
+            "aggressive": {
+              "mean_payoff": 0.0939,
+              "win_rate": 0.3613,
+              "mean_bid": 1.6751
+            },
+            "shaded": {
+              "mean_payoff": 0.0932,
+              "win_rate": 0.1466,
+              "mean_bid": 1.2152
+            },
+            "budget": {
+              "mean_payoff": 0.1034,
+              "win_rate": 0.1791,
+              "mean_bid": 1.309
+            }
+          }
+        },
+        "VCG": {
+          "revenue": 3.2764,
+          "social_welfare": 8.6977,
+          "efficiency": 0.9209,
+          "payoff_mean": 1.0843,
+          "payoff_std": 0.2634,
+          "utility_gini": 0.13,
+          "truthful_gap": 0.1824,
+          "late_bid_rate": 0.0092,
+          "collusion_discount": 0.0,
+          "payoff_by_type": {
+            "aggressive": {
+              "mean_payoff": 0.3882,
+              "win_rate": 0.3747,
+              "mean_bid": 1.7041
+            },
+            "shaded": {
+              "mean_payoff": 0.1529,
+              "win_rate": 0.1303,
+              "mean_bid": 1.2248
+            },
+            "truthful": {
+              "mean_payoff": 0.3197,
+              "win_rate": 0.2965,
+              "mean_bid": 1.5218
+            },
+            "budget": {
+              "mean_payoff": 0.2176,
+              "win_rate": 0.1927,
+              "mean_bid": 1.3202
+            }
+          }
+        }
+      },
+      "comparisons": {
+        "vcg_minus_gsp_welfare": -0.0624,
+        "vcg_minus_gsp_efficiency": 0.0,
+        "vcg_minus_gsp_payoff_std": -0.0486,
+        "vcg_revenue_loss_vs_gsp": 3.5329,
+        "vcg_revenue_loss_pct_vs_gsp": 51.88
+      },
+      "samples": {
+        "GSP": {
+          "top_round_metrics": {
+            "revenue": 6.6173,
+            "social_welfare": 8.7327,
+            "efficiency": 0.8892,
+            "payoff_mean": 0.4231,
+            "payoff_std": 0.4331,
+            "utility_gini": 0.5048,
+            "on_time_rate": 1.0,
+            "late_bid_rate": 0.0,
+            "truthful_gap": 0.3058,
+            "winner_count": 5,
+            "collusion_discount": 0.0
+          },
+          "top_round_allocations": [
+            {
+              "slot": 1,
+              "bidder_id": "b7",
+              "ctr": 1.0,
+              "bid": 2.485,
+              "payment": 2.397,
+              "utility": 0.492,
+              "value": 2.889,
+              "on_time": true
+            },
+            {
+              "slot": 2,
+              "bidder_id": "b9",
+              "ctr": 0.82,
+              "bid": 2.397,
+              "payment": 1.7786,
+              "utility": 0.0394,
+              "value": 2.217,
+              "on_time": true
+            },
+            {
+              "slot": 3,
+              "bidder_id": "b14",
+              "ctr": 0.64,
+              "bid": 2.169,
+              "payment": 1.3805,
+              "utility": -0.0806,
+              "value": 2.031,
+              "on_time": true
+            },
+            {
+              "slot": 4,
+              "bidder_id": "b20",
+              "ctr": 0.49,
+              "bid": 2.157,
+              "payment": 1.0427,
+              "utility": 0.5184,
+              "value": 3.186,
+              "on_time": true
+            },
+            {
+              "slot": 5,
+              "bidder_id": "b4",
+              "ctr": 0.37,
+              "bid": 2.128,
+              "payment": 0.0185,
+              "utility": 1.1463,
+              "value": 3.148,
+              "on_time": true
+            }
+          ]
+        },
+        "VCG": {
+          "top_round_metrics": {
+            "revenue": 3.7106,
+            "social_welfare": 9.2241,
+            "efficiency": 0.9351,
+            "payoff_mean": 1.1027,
+            "payoff_std": 0.2433,
+            "utility_gini": 0.1086,
+            "on_time_rate": 1.0,
+            "late_bid_rate": 0.0,
+            "truthful_gap": 0.1887,
+            "winner_count": 5,
+            "collusion_discount": 0.0
+          },
+          "top_round_allocations": [
+            {
+              "slot": 1,
+              "bidder_id": "b11",
+              "ctr": 1.0,
+              "bid": 3.368,
+              "payment": 1.5991,
+              "utility": 1.5689,
+              "value": 3.168,
+              "on_time": true
+            },
+            {
+              "slot": 2,
+              "bidder_id": "b14",
+              "ctr": 0.82,
+              "bid": 2.642,
+              "payment": 1.1236,
+              "utility": 0.9863,
+              "value": 2.573,
+              "on_time": true
+            },
+            {
+              "slot": 3,
+              "bidder_id": "b1",
+              "ctr": 0.64,
+              "bid": 2.506,
+              "payment": 0.6725,
+              "utility": 0.8769,
+              "value": 2.421,
+              "on_time": true
+            },
+            {
+              "slot": 4,
+              "bidder_id": "b17",
+              "ctr": 0.49,
+              "bid": 2.504,
+              "payment": 0.2969,
+              "utility": 1.0972,
+              "value": 2.845,
+              "on_time": true
+            },
+            {
+              "slot": 5,
+              "bidder_id": "b4",
+              "ctr": 0.37,
+              "bid": 2.32,
+              "payment": 0.0185,
+              "utility": 0.9842,
+              "value": 2.71,
+              "on_time": true
+            }
+          ]
+        }
+      }
+    },
+    "latency_case": {
+      "scenario": "latency",
+      "rounds": 300,
+      "num_bidders": 20,
+      "num_slots": 5,
+      "value_range": {
+        "min": 0.35,
+        "max": 3.2
+      },
+      "bid_deadline_ms": 120,
+      "latency_scale_ms": 58,
+      "type_mix": {
+        "truthful": 0.25,
+        "shaded": 0.25,
+        "budget": 0.25,
+        "aggressive": 0.25
+      },
+      "type_counts": null,
+      "collusion_rate": 0.3,
+      "summary": {
+        "GSP": {
+          "revenue": 6.5741,
+          "social_welfare": 8.6393,
+          "efficiency": 0.9082,
+          "payoff_mean": 0.413,
+          "payoff_std": 0.3093,
+          "utility_gini": 0.4075,
+          "truthful_gap": 0.1824,
+          "late_bid_rate": 0.1058,
+          "collusion_discount": 0.0,
+          "payoff_by_type": {
+            "truthful": {
+              "mean_payoff": 0.0777,
+              "win_rate": 0.2374,
+              "mean_bid": 1.5531
+            },
+            "aggressive": {
+              "mean_payoff": 0.106,
+              "win_rate": 0.389,
+              "mean_bid": 1.6751
+            },
+            "shaded": {
+              "mean_payoff": 0.1141,
+              "win_rate": 0.1764,
+              "mean_bid": 1.2152
+            },
+            "budget": {
+              "mean_payoff": 0.1154,
+              "win_rate": 0.1993,
+              "mean_bid": 1.309
+            }
+          }
+        },
+        "VCG": {
+          "revenue": 3.1755,
+          "social_welfare": 8.5896,
+          "efficiency": 0.9094,
+          "payoff_mean": 1.0828,
+          "payoff_std": 0.2777,
+          "utility_gini": 0.1375,
+          "truthful_gap": 0.1824,
+          "late_bid_rate": 0.104,
+          "collusion_discount": 0.0,
+          "payoff_by_type": {
+            "aggressive": {
+              "mean_payoff": 0.4177,
+              "win_rate": 0.4025,
+              "mean_bid": 1.7041
+            },
+            "shaded": {
+              "mean_payoff": 0.1885,
+              "win_rate": 0.1625,
+              "mean_bid": 1.2248
+            },
+            "truthful": {
+              "mean_payoff": 0.2453,
+              "win_rate": 0.2291,
+              "mean_bid": 1.5218
+            },
+            "budget": {
+              "mean_payoff": 0.2281,
+              "win_rate": 0.2025,
+              "mean_bid": 1.3202
+            }
+          }
+        }
+      },
+      "comparisons": {
+        "vcg_minus_gsp_welfare": -0.0497,
+        "vcg_minus_gsp_efficiency": 0.0012,
+        "vcg_minus_gsp_payoff_std": -0.0316,
+        "vcg_revenue_loss_vs_gsp": 3.3986,
+        "vcg_revenue_loss_pct_vs_gsp": 51.7
+      },
+      "samples": {
+        "GSP": {
+          "top_round_metrics": {
+            "revenue": 6.6173,
+            "social_welfare": 8.7327,
+            "efficiency": 0.8892,
+            "payoff_mean": 0.4231,
+            "payoff_std": 0.4331,
+            "utility_gini": 0.5048,
+            "on_time_rate": 1.0,
+            "late_bid_rate": 0.0,
+            "truthful_gap": 0.3058,
+            "winner_count": 5,
+            "collusion_discount": 0.0
+          },
+          "top_round_allocations": [
+            {
+              "slot": 1,
+              "bidder_id": "b7",
+              "ctr": 1.0,
+              "bid": 2.485,
+              "payment": 2.397,
+              "utility": 0.492,
+              "value": 2.889,
+              "on_time": true
+            },
+            {
+              "slot": 2,
+              "bidder_id": "b9",
+              "ctr": 0.82,
+              "bid": 2.397,
+              "payment": 1.7786,
+              "utility": 0.0394,
+              "value": 2.217,
+              "on_time": true
+            },
+            {
+              "slot": 3,
+              "bidder_id": "b14",
+              "ctr": 0.64,
+              "bid": 2.169,
+              "payment": 1.3805,
+              "utility": -0.0806,
+              "value": 2.031,
+              "on_time": true
+            },
+            {
+              "slot": 4,
+              "bidder_id": "b20",
+              "ctr": 0.49,
+              "bid": 2.157,
+              "payment": 1.0427,
+              "utility": 0.5184,
+              "value": 3.186,
+              "on_time": true
+            },
+            {
+              "slot": 5,
+              "bidder_id": "b4",
+              "ctr": 0.37,
+              "bid": 2.128,
+              "payment": 0.0185,
+              "utility": 1.1463,
+              "value": 3.148,
+              "on_time": true
+            }
+          ]
+        },
+        "VCG": {
+          "top_round_metrics": {
+            "revenue": 3.4039,
+            "social_welfare": 9.0746,
+            "efficiency": 0.92,
+            "payoff_mean": 1.1341,
+            "payoff_std": 0.2794,
+            "utility_gini": 0.1299,
+            "on_time_rate": 0.95,
+            "late_bid_rate": 0.05,
+            "truthful_gap": 0.1887,
+            "winner_count": 5,
+            "collusion_discount": 0.0
+          },
+          "top_round_allocations": [
+            {
+              "slot": 1,
+              "bidder_id": "b11",
+              "ctr": 1.0,
+              "bid": 3.368,
+              "payment": 1.5225,
+              "utility": 1.6455,
+              "value": 3.168,
+              "on_time": true
+            },
+            {
+              "slot": 2,
+              "bidder_id": "b14",
+              "ctr": 0.82,
+              "bid": 2.642,
+              "payment": 1.0469,
+              "utility": 1.063,
+              "value": 2.573,
+              "on_time": true
+            },
+            {
+              "slot": 3,
+              "bidder_id": "b1",
+              "ctr": 0.64,
+              "bid": 2.506,
+              "payment": 0.5958,
+              "utility": 0.9536,
+              "value": 2.421,
+              "on_time": true
+            },
+            {
+              "slot": 4,
+              "bidder_id": "b17",
+              "ctr": 0.49,
+              "bid": 2.504,
+              "payment": 0.2202,
+              "utility": 1.1738,
+              "value": 2.845,
+              "on_time": true
+            },
+            {
+              "slot": 5,
+              "bidder_id": "b16",
+              "ctr": 0.37,
+              "bid": 1.681,
+              "payment": 0.0185,
+              "utility": 0.8347,
+              "value": 2.306,
+              "on_time": true
+            }
+          ]
+        }
+      }
+    }
+  }
+}
