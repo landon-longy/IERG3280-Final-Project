@@ -93,6 +93,8 @@
     {\large \textit{Name}: \authorname \par}
     {\vspace{0.2cm}}
     {\large \textit{Student ID}: \studentid \par}
+    {\vspace{0.3cm}}
+    { \url{https://github.com/landon-longy/IERG3280-Final-Project}}
     
     \vfill
     
@@ -413,5 +415,40 @@ Overall, the project shows that robustness in networked markets should be evalua
 
 \bibliographystyle{IEEEtran}
 \bibliography{references}
+
+\newpage
+\section*{Appendix}
+\addcontentsline{toc}{section}{Appendix}
+
+\subsection*{Web Interface for Simulator Control}
+
+ A lightweight web-based interface is provided to facilitate interactive exploration of the auction simulator. The interface serves as a local control panel that allows users to configure experimental settings and inspect outcomes in real time.
+
+The interface supports the following core functionalities:
+
+\begin{itemize}
+    \item \textbf{Scenario selection:} heterogeneous (manual specification of the number 4 types of bidders), collusion (selection of the number of collusive users), and latency settings (adjustment of base latency and bid submission deadlines within predefined bounds).
+    \item \textbf{Mechanism selection:} GSP or VCG.
+    \item \textbf{Custom market parameters:} number of users and number of slots.
+    \item \textbf{Valuation range control:} configurable lower and upper bounds via \texttt{value\_min} and \texttt{value\_max}.
+    \item \textbf{Simulation control:} adjustable number of summary rounds.
+\end{itemize}
+
+After execution, the interface presents the results through multiple views: A summary card displaying key performance metrics and the full JSON output for the single-run result.
+The web interface, guideline and source code can be found on the project website: \url{https://github.com/landon-longy/IERG3280-Final-Project}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{webapp1.png}
+    \caption{Overview of the web interface for simulator control}
+    \label{fig:web-ui}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{webapp2.png}
+    \caption{Web key performance matrics and JSON output}
+    \label{fig:web-ui}
+\end{figure}
 
 \end{document}
